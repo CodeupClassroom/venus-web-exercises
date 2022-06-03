@@ -1,3 +1,5 @@
+(function(){
+
 "use strict";
 
 // If you want to quickly 'comment' out - try cmd + /
@@ -142,3 +144,12 @@ alert("Alright, using my super cool javascript function, I have calculated that 
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+
+function applyDiscount(originalPrice, discountAsDeci){
+
+    // return originalPrice - (originalPrice * discountAsDeci);
+    //Below: A more advanced thought, we can call calculateTip into the mix here to D R Y - do our math that we want to do without rewriting it :D
+    return originalPrice - calculateTip(discountAsDeci, originalPrice);
+}
+
+})();
