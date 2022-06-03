@@ -44,8 +44,14 @@ console.log(helloMessage);
  * console.
  */
 
+
+let myName = "Kendawg";
+
+console.log(sayHello(myName));
+
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
+
 var random = Math.floor((Math.random() * 3) + 1);
 
 /**
@@ -58,13 +64,28 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > isTwo(1) // returns false
  * > isTwo(2) // returns true
  * > isTwo(3) // returns false
- *
- * Call the function 'isTwo' passing the variable 'random' as a argument.
+ */
+
+// i. function name = isTwo
+// ii. take in one param of num
+// iii. return boolean
+// iv. boolean modified on T/F whether num === 2
+
+function isTwo(num){
+
+    return num === 2; //Is the thing I got the same value AND data type as the number 2? Let me know and give me back a TRUE or FALSE
+}
+
+
+ /** Call the function 'isTwo' passing the variable 'random' as a argument.
  *
  * console.log *outside of the function* to check your work (you should see a
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+//
+// console.log("The random number is currently = " + random);
+// console.log(isTwo(random));;
 
 /**
  * TODO:
