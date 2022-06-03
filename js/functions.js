@@ -1,5 +1,8 @@
 "use strict";
 
+// If you want to quickly 'comment' out - try cmd + /
+// alert("Sanity check - is this hooked up to the html file?")
+
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -9,6 +12,18 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
+//Step 1: I need to write a function named 'sayHello'
+//Step 2: That function needs 1 parameter named 'name'
+//Step 3: The body [the instructions] for the function need to RETURN a message
+//Step 4: That message is a STRING that says hello to 'name'
+
+function sayHello(name){
+
+
+    return "Hello, " + name;
+}
+
+
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -16,6 +31,11 @@
  *
  * console.log 'helloMessage' to check your work
  */
+
+let helloMessage = sayHello("Kenneth");
+
+console.log(helloMessage);
+
 
 /**
  * TODO:
