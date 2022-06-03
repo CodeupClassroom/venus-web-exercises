@@ -99,7 +99,19 @@ function isTwo(num){
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
+// i. function named calculateTip
+// ii. sounds like a two parameter kind of show "a tip" and "the bill"
+// iii. return number
+// iv. the number is the math of the amount to tip based on bill total
 
+function calculateTip(tipAmount, billTotal){
+
+    let tipInDollars = tipAmount * billTotal;
+
+    // return tipAmount * billTotal; Maybe instead of returning the math directly, you used a variable instead:
+
+    return tipInDollars;
+}
 
 /**
  * TODO:
@@ -107,6 +119,14 @@ function isTwo(num){
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+alert("Thank you for eating at Ken's Krazy Fish Fry - let's see what your bill is and how much you want to tip!")
+
+let totalAmount = prompt("How much was your bill today at Ken's Krazy Fish Fry?")
+
+let tipAsDecimal = prompt("Alright, cool! How much would you like to tip for your bill of $" + totalAmount + "?")
+
+alert("Alright, using my super cool javascript function, I have calculated that you will tip $" + calculateTip(tipAsDecimal, totalAmount))
 
 /**
  * TODO:
