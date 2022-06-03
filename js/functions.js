@@ -58,6 +58,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
+
+
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
