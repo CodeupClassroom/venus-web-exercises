@@ -97,7 +97,7 @@ function analyzeColor(color){
 
 let userInput = prompt("Would you please tell me your favorite color? :)")
 
-alert(analyzeColor(userInput)) //We're feeding userInput into analyzeColor - then feeding return [the results] of analyzeColor into the alert
+// alert(analyzeColor(userInput)) //We're feeding userInput into analyzeColor - then feeding return [the results] of analyzeColor into the alert
 
 /* ########################################################################## */
 
@@ -120,6 +120,27 @@ alert(analyzeColor(userInput)) //We're feeding userInput into analyzeColor - the
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+
+function calculateTotal(luckyNum, totalPrice){
+
+    if (luckyNum === 0){ // no discount
+        return totalPrice;
+    } else if (luckyNum === 1) { //ten percent
+        return totalPrice - (totalPrice * .10);
+    } else if (luckyNum === 2){ //25 percent off
+        return totalPrice - (totalPrice * .25);
+    } else if (luckyNum === 3){ //35 percent
+        return totalPrice - (totalPrice * .35);
+    } else if (luckyNum === 4){ //50% off
+        return totalPrice - (totalPrice * .50);
+    } else if (luckyNum === 5){ //Free :o
+        return 0;
+    }
+
+
+}
+
+
 
 /**
  * TODO:
