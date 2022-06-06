@@ -95,7 +95,7 @@ function analyzeColor(color){
  * function to show it to the user.
  */
 
-let userInput = prompt("Would you please tell me your favorite color? :)")
+// let userInput = prompt("Would you please tell me your favorite color? :)")
 
 // alert(analyzeColor(userInput)) //We're feeding userInput into analyzeColor - then feeding return [the results] of analyzeColor into the alert
 
@@ -151,7 +151,13 @@ function calculateTotal(luckyNum, totalPrice){
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
+//Prompt - alert of what luckyNum was, total was, and price after was
+
+// let userTotal = prompt("Why hello there - thanks for shopping with us today, what was your total bill?")
+//
+// alert("Wow! Okay, well, today you drew a lucky number of " + luckyNumber +". Your total today was $" + userTotal + ". That means you actually owe us $" + calculateTotal(luckyNumber, userTotal))
 
 /**
  * TODO:
@@ -171,3 +177,36 @@ function calculateTotal(luckyNum, totalPrice){
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+function numberGame() {
+    let userStart = confirm("Would you like to enter a number?");
+
+    if (userStart) {
+        //Happy path where user wanted to give us a number
+        let userNum = prompt("Okay! Cool - gimme a number please!");
+
+        userNum = Number(userNum);
+
+        if (isNaN(userNum)) { //If I convert the input to a Number did I get NaN [true] or a numeric false [false - it is a number I got]
+            alert("Incorrect data type - you entered a value that was not a number. Please run the application and try again.")
+
+        } else {
+            alert("Your number plus 100 is " + (userNum + 100));
+
+            if (userNum % 2 === 0) {
+                alert("Your number was even :D")
+            } else {
+                alert("Your number was odd :D")
+            }
+
+            if (userNum >= 0) {
+                alert("You were feeling POSITIVE today with your number")
+            } else {
+                alert("You were feeling negative today with your number")
+            }
+        }
+    } else {
+        //Unhappy path where user is against numbers? Did not want to play? Just did not give us a "true" to continue
+        alert("Sorry to ask - just wanted to see if you wanted to enter a number. TTYL :)")
+    }
+}
