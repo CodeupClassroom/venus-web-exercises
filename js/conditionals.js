@@ -85,8 +85,6 @@ function analyzeColor(color){
 
     }
 
-
-
     return message;
 }
 
@@ -96,6 +94,10 @@ function analyzeColor(color){
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+let userInput = prompt("Would you please tell me your favorite color? :)")
+
+alert(analyzeColor(userInput)) //We're feeding userInput into analyzeColor - then feeding return [the results] of analyzeColor into the alert
 
 /* ########################################################################## */
 
