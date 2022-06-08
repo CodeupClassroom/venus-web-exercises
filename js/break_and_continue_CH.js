@@ -50,6 +50,13 @@ while(true){
     break;
 }
 
+//do while solution but doesn't include a break statement
+
+do {
+    var userInput = prompt("Please enter an Odd Number between 1 and 50");
+    userInput =  parseInt(userInput);
+}while(isNaN(userInput) || userInput % 2 === 0 || userInput < 1 || userInput > 50);
+
 
 
 
