@@ -37,6 +37,8 @@ while(true){
     break;
 
 }
+
+
 // alternate solution using || operators
 while(true){
     let userInput = prompt("Please enter an Odd Number between 1 and 50");
@@ -50,7 +52,7 @@ while(true){
     break;
 }
 
-//do while solution but doesn't include a break statement
+//alternate solution using do while but doesn't include a break statement. Accomplishes task but doesn't meet the break requirement of the question.
 
 do {
     var userInput = prompt("Please enter an Odd Number between 1 and 50");
@@ -61,3 +63,15 @@ do {
 
 
 //  TODO # 2  Use a loop and the continue statement to output all the odd numbers between 1 and 50, except for the number the user entered.
+
+for (let i = 1; i <= 50; i++){
+    if(userInput === i){
+        console.log("Yikes Skipping " + i);
+        continue;
+    }
+
+    if(i % 2 !== 0){
+        console.log(i + " is an odd number")
+    }
+
+}
