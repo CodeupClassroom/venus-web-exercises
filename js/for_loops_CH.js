@@ -31,11 +31,34 @@ for(let i = 1; i <= 10; i++){
 
 // TODO: Create a for loop that uses console.log to create the output shown below.
 //
-
+//The code below is technically correct
 for(let i = 1; i <= 9; i++){
-    console.log(i)
+    switch (i){
+        case 1: console.log("1");
+            break;
+        case 2: console.log("22");
+            break;
+        case 3: console.log("333");
+            break;
+        case 4: console.log("4444");
+            break;
+        case 5: console.log("55555");
+            break;
+        case 6: console.log("666666");
+            break;
+        case 7: console.log("7777777");
+            break;
+        case 8: console.log("88888888");
+            break;
+        case 9: console.log("999999999");
+            break;
+    }
+
 }
 
 
 // TODO: Create a for loop that uses console.log to create the output shown below.
 
+for(let i = 100; i >= 5; i -= 5){
+    console.log(i)
+}
