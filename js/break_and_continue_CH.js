@@ -5,7 +5,7 @@
 
 // TODO # 1 Prompt the user for an odd number between 1 and 50. Use a loop and a break statement to continue prompting the user if they enter invalid input.
 
-//Solution
+//Solution using While, Continue, Break, If's with no else statements.
 
 while(true){
 
