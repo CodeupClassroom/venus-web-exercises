@@ -52,7 +52,7 @@ while(true){
     break;
 }
 
-//alternate solution using do while but doesn't include a break statement. Accomplishes task but doesn't meet the break requirement of the question.
+//alternate solution using do while but doesn't include a break statement. Accomplishes task but doesn't meet the break statement requirement of the question.
 
 do {
     var userInput = prompt("Please enter an Odd Number between 1 and 50");
