@@ -116,3 +116,12 @@ console.log(cars);
 console.log(students);
 
 console.log(food);
+
+function createPokemon(pokeName, pokeType){
+
+    return {pokemonName: pokeName, pokemonType: pokeType}
+}
+
+let pokeObj = createPokemon("Bulbasaur", "Grass")
+
+console.log(pokeObj);
