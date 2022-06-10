@@ -25,7 +25,6 @@
     let person = {
         firstName: "Cody",
         lastName: "Hastings",
-
         sayHello(){
             return "Hello " + person.firstName + person.lastName;
         }
@@ -70,7 +69,7 @@
         });
 
     }
-
+console.log("TODO: 3")
     calculateDisc(shoppers);
 
     /** TODO: 4
@@ -207,7 +206,8 @@ var books = [];
     books.forEach(function (book, index){
         showBookInfo(book);
         }
-    )
+    );
+
 
 
 })();
