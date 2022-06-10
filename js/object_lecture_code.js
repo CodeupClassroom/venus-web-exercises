@@ -51,3 +51,68 @@ console.log("Come on down to a block party at " + myHouse.address);
 //Last time we had a party Cody couldn't find my house because he didn't know what color it was - let me add that in
 
 console.log("Come on down to a block party at " + myHouse.address + ". You'll know it's my house because it is a " + myHouse.color);
+
+//Nesting other objects inside of our objects
+
+myHouse.address = {
+    streetNum: 8646,
+    streetName: "Sunny Oaks",
+    city: "San Antonio",
+    state: "Texas"
+}
+
+console.log(myHouse.address);
+
+myHouse.color = ["blue", "gray"]
+
+console.log(myHouse.color);
+
+//So even though it's nested we can still take our array material and use it here -
+
+myHouse.color.forEach(function(color){
+    console.log("Here's a color my house is : " + color);
+})
+
+console.log("This is the first color mentioned about my house: " + myHouse.color[0]);
+
+console.log(myHouse.color.join(" | "));
+
+let otherCar = {
+    year: 2010,
+    make: "Honda",
+    model: "Fit",
+    owner: {
+        name: "A.G",
+        age: 27
+    }
+}
+
+console.log("I do own one other car, but it is " + otherCar.owner.name + "'s car. She is " + otherCar.owner.age + " years old and hates being examples in class :)");
+
+otherCar.horn = function(){
+    alert("HONK HONK")
+}
+
+//So we used a method to HONK - let's practice the THIS keyword
+
+myHouse.address = "8646 Sunny Oaks, SA, TX 78250"
+
+myHouse.blockPartyInvitation = function(){
+    alert("Come on down to " + this.address)
+}
+
+let cars = [car, otherCar];
+
+let students = [{name: "Rhiannon H."}, {name: "Jose M"}]
+
+let food = [];
+
+food[0] = {name: "enchiladas verdes", price: 50.00, numberOfEnchiladas: .5}
+
+food[1] = {name: "tuna packets", price: 100.00, numberOfTunas: .01}
+
+
+console.log(cars);
+console.log(students);
+
+console.log(food);
