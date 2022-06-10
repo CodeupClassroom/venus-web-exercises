@@ -16,6 +16,7 @@ var skull = new Person("Eugene", "Skullovitch");
 
 personArr.push(jason, kimberly,trini,zack,billy,tommy,bulk,skull);
 
+
 function PowerRanger(person, color, zord){
     this.person = person;
     this.color = color;
