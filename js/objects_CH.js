@@ -62,7 +62,7 @@
         array.forEach(function (shopper){
             if(shopper.amount >= 200){
                 console.log(shopper.name + " spent over $200 and will receive a 12% discount." +
-                    " \n Original amount: " +  shopper.amount + " \n New Amount: " + shopper.amount * .12);
+                    " \n Original amount: " +  shopper.amount + " \n New Amount: " + (shopper.amount - (shopper.amount * .12)));
             } else {
                 console.log(shopper.name + " Owes: " + shopper.amount);
             }
@@ -185,10 +185,16 @@ var books = [];
 
     console.log(books);
 
-/* * TODO  - Create a function named `showBookInfo` that accepts a book object and
-    *  outputs the information described above. Refactor your loop to use your
-    *  `showBookInfo` function.
-*/
+    console.log(book1);
+    console.log(book2);
+    console.log(book3);
+    console.log(book4);
+    console.log(book5);
+
+    /* * TODO  - Create a function named `showBookInfo` that accepts a book object and
+        *  outputs the information described above. Refactor your loop to use your
+        *  `showBookInfo` function.
+    */
 
     function showBookInfo(book){
             console.log(
