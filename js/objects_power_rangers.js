@@ -1,9 +1,10 @@
 
-
+//Person Constructor
 function Person(firstName, lastName){
     this.firstName = firstName;
     this.lastName = lastName;
 }
+
 var personArr = []
 var jason = new Person("Jason", "Scott");
 var kimberly = new Person("Kimberly", "Hart");
@@ -14,16 +15,23 @@ var tommy = new Person("Tommy", "Oliver");
 var bulk = new Person("Farkas", "Bulkmeier");
 var skull = new Person("Eugene", "Skullovitch");
 
-personArr.push(jason, kimberly,trini,zack,billy,tommy,bulk,skull);
+personArr.push(jason,kimberly,trini,zack,billy,tommy,bulk,skull);
 
-
+//Power Ranger Constructor
 function PowerRanger(person, color, zord){
     this.person = person;
     this.color = color;
     this.zord = zord;
 
     this.morphinTime = function(){
-        console.log(this.person.firstName + " yells! It's Morphin Time!!" + this.zord.toUpperCase() + "!!!!" + "\n" + this.person.firstName + " morphs into The " + this.color + " Ranger");
+        console.log(
+
+            this.person.firstName + " yells! It's Morphin Time!! \n" +
+            this.zord.toUpperCase() + "!!!!" + "\n" +
+            this.person.firstName +
+            " morphs into The " + this.color + " Ranger"
+
+        );
     }
 }
 
@@ -41,7 +49,7 @@ originalRangersArray.push(redRanger, pinkRanger, yellowRanger, blackRanger, blue
 function morphAllRangers(powerRangerTeam){
     powerRangerTeam.forEach(function (ranger){
         ranger.morphinTime();
-    })
+    });
 }
 
 morphAllRangers(originalRangersArray);
