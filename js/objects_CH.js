@@ -165,16 +165,17 @@ console.log("TODO: 3")
      *   use your function.
 **/
 var books = [];
-    function createBook(title, firstName, lastName){
-       var book = {};
-       book.title = title;
-       book.author = {
-           firstName: firstName,
-           lastName: lastName
-       };
-       books.unshift(book);
-       return book;
-    }
+
+function createBook(title, firstName, lastName){
+    var book = {};
+   book.title = title;
+   book.author = {
+       firstName: firstName,
+       lastName: lastName
+   };
+   books.unshift(book);
+   return book;
+}
 
     var book1 = createBook("Dune", "Frank", "Herbert");
     var book2 = createBook("Dune2", "Frank", "Herbert");
@@ -183,6 +184,7 @@ var books = [];
     var book5 = createBook("Dune5", "Frank", "Herbert");
 
     console.log(books);
+
 
     console.log(book1);
     console.log(book2);
