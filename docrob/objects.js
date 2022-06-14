@@ -52,11 +52,24 @@ ${this.lastName}`);
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
-    for (let i = 0; i < shoppers.length; i++) {
-        const shopper = shoppers[i];
-
-        // console.log(shopper)
-        let outputString = `${shopper.name} $ shopper.amount`;
+    // for (let i = 0; i < shoppers.length; i++) {
+    //     const shopper = shoppers[i];
+    //
+    //     // console.log(shopper)
+    //     let outputString = `${shopper.name} ${shopper.amount}`;
+    //
+    //     // If a shopper spends more than $200, they get a 12% discount
+    //     if(shopper.amount > 200) {
+    //         const discount = shopper.amount * .12;
+    //         const afterDiscountAmount = shopper.amount - discount;
+    //
+    //         outputString += ` $ ${discount.toFixed(2)} $ ${afterDiscountAmount.toFixed(2)}`;
+    //     }
+    //
+    //     console.log(outputString);
+    // }
+    shoppers.forEach(function(shopper) {
+        let outputString = `${shopper.name} ${shopper.amount}`;
 
         // If a shopper spends more than $200, they get a 12% discount
         if(shopper.amount > 200) {
@@ -67,7 +80,8 @@ ${this.lastName}`);
         }
 
         console.log(outputString);
-    }
+    });
+
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
