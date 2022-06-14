@@ -40,7 +40,13 @@
     // Create a file named map-filter-reduce.js in your js directory and copy the users data below into it.
     // TODO Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
     users.filter(function (user){
-        return user.languages.length >=3;
+        if(user.languages.length >= 3) {
+            return true;
+        } else {
+            return false;
+        }
+        // same thing as this simpler version:
+        // return user.languages.length >=3;
     })
 
     // TODO Use .map to create an array of strings where each element is a user's email address
@@ -50,6 +56,7 @@
 
     // TODO Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
     var totalYears = users.reduce(function (total, user){
+        console.log("Total is " + total);
         return total + user.yearsOfExperience;
     }, 0)
 
@@ -59,7 +66,9 @@
     // 5
     // TODO Use .reduce to get the longest email from the list of users.
     const longestEmail = users.reduce(function(longestEmailSoFar, user) {
-        if(user.email.length > longestEmailSoFar.length) {
+        console.log("longest email so far: " + longestEmailSoFar);
+
+        if(user.email.length >= longestEmailSoFar.length) {
             return user.email;
         }
         return longestEmailSoFar;
@@ -68,11 +77,32 @@
 
     // 6
     // TODO Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
-    let allUserNames = users.reduce(function (allUserNamesSoFar, user) {
-        return allUserNamesSoFar + user.name + ", ";
-    }, "");
-    // we ended up with last user's name having `, ` after it so trim that off
-    allUserNames = allUserNames.substr(0, allUserNames.length - 2);
-    console.log(allUserNames);
+    // let allUserNames = users.reduce(function (allUserNamesSoFar, user) {
+    //     console.log("all user names so far: "  + allUserNamesSoFar);
+    //
+    //     return allUserNamesSoFar + user.name + ", ";
+    // }, "");
+    // // we ended up with last user's name having `, ` after it so trim that off
+    // allUserNames = allUserNames.substr(0, allUserNames.length - 2);
 
+    // let allUserNames = users.reduce(function(allUserNamesSoFar, user) {
+    //     return allUserNamesSoFar.push(user.name);
+    // }, []);
+    let allUserNames = users.map(function (user) {
+        return user.name;
+    })
+    console.log(allUserNames.join(", "));
+
+    // bonus
+    // note: a Set is a neat and useful data structure.
+    // it is like an array but only stores UNIQUE elements
+    // https://en.wikipedia.org/wiki/Set_(abstract_data_type)
+
+    let uniqueLanguages = users.reduce(function(setOfUniqueLanguagesSoFar, user) {
+        for(let language of user.languages) {
+            setOfUniqueLanguagesSoFar.add(language)
+        }
+        return setOfUniqueLanguagesSoFar;
+    }, new Set());
+    console.log(uniqueLanguages);
 })()
