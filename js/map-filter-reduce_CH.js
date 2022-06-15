@@ -60,6 +60,7 @@ var averageYears = totalYears/users.length;
 
 
 // TODO Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
-users.filter(function (user){
+users.reduce(function(allUsersSoFar,user){
+    return allUsersSoFar + user.name + ", ";
+},' ')
 
-})
