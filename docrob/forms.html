@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<form method="GET" action="https://request-inspector.glitch.me">
+
+  <!-- the lack of an nbsp; between favorite and option will
+  cause option to bump down a line when the browser width
+  narrows -->
+  <h1>Please&nbsp;select&nbsp;your&nbsp;favorite option</h1>
+  <h5>question 1</h5>
+
+  <h5>question 2</h5>
+
+  <h5>question 3</h5>
+
+  <h5>question 4</h5>
+
+  <span>How do you like your fries?</span>
+  <br>
+  <label for="quiz_question_1_a">A
+    <input type="radio" name="quiz_question_1" id="quiz_question_1_a" value="a">
+  </label>
+  <!-- note: using non-breaking spaces to space elements
+  is not a good choice.
+  From: https://mailtrap.io/blog/nbsp/
+  "At the same time, creating multiple spaces with the use of &nbsp
+  is a poor design practice. What may look OK on your screen is
+  almost certain to collapse in an uncontrollable way on the user’s
+  end because of the enormous diversity of screen sizes and resolutions."
+  Instead use css attributes like margin, padding, etc. -->
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <label for="quiz_question_1_b">B
+    <input type="radio" name="quiz_question_1" id="quiz_question_1_b" value="b">
+  </label>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <label for="quiz_question_1_c">C
+    <input type="radio" name="quiz_question_1" id="quiz_question_1_c" value="c">
+  </label>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <label for="quiz_question_1_d">D
+    <input type="radio" name="quiz_question_1" id="quiz_question_1_d" value="d">
+  </label>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+
+  <br>
+  <br>
+  <br>
+  <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Structure-->
+<form method="GET" action="https://request-inspector.glitch.me">
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text">
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+    <br>
+
+    <input type="submit">
+</form>
+
+
+
+<!--Method-->
+
+
+
+<!--Action-->
+
+
+
+<!--Query Strings-->
+<form action="https://request-inspector.glitch.me" method="GET">
+    <label for="zipcode"></label>
+    <input type="text" name="zipcode" id="zipcode" placeholder="type a cool zipcode" value="78245">
+    <button type="submit">Search</button>
+
+
+</form>
+
+<a href="https://request-inspector.glitch.me?zipcode=78205">Search in ZIP Code 78205</a>
+
+
+<!--Submitting-->
+<input type="submit"><br>
+
+
+<button type="submit">Go</button>
+
+
+<!--Inputs-->
+
+
+
+
+
+<!--Common Form Input Elements-->
+
+<!--Text Inputs-->
+
+<!--Text Areas-->
+
+<textarea name="comment"></textarea>
+
+
+
+<!--Checkboxes and Radio Buttons-->
+<br>
+<input name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For The Email Newsletter
+<br>
+
+<h1>Please select your favorite option</h1>
+<h5>question 1</h5>
+A <input type="radio" name="quiz_question_1" value="a"><br>
+B <input type="radio" name="quiz_question_1" value="b"><br>
+C <input type="radio" name="quiz_question_1" value="c"><br>
+D <input type="radio" name="quiz_question_1" value="d"><br>
+
+<!--Selects-->
+
+<select name="coffee_preference">
+    <option value="light">Light Roast</option>
+    <option value="dark">Dark Roast</option>
+    <option value="espresso">Espresso Blend</option>
+    <option value="The darkest coffee">Super Dark Coffee</option>
+</select>
+
+<!--Hidden Inputs-->
+
+<br>
+<br>
+<br>
+
+<input type="hidden" name="user_id" value="432">
+
+<!--Common Attributes of Form Elements-->
+
+
+
+<!--Name and Value-->
+
+
+
+<!--Disabled-->
+<input type="text" name="username" value="codeup" disabled>
+
+<select name="newsletter_signup">
+    <option disabled value="n">No</option>
+    <option selected value="y">Yes</option>
+</select>
+
+
+<!--Labels-->
+
+
+<form method="GET" action="https://request-inspector.glitch.me">
+    <h2>What kind of phone do you own?</h2>
+    <label for="android">
+        Android <input id="android" type="checkbox" name="phones" value="android">
+    </label>
+    <label for="ios">
+        iOS <input id="ios" type="checkbox" name="phones" value="ios">
+    </label>
+    <label for="windows">
+        Windows <input id="windows" type="checkbox" name="phones" value="windows">
+    </label>
+    <label for="other">
+        Other <input id="other" type="checkbox" name="phones" value="other">
+    </label>
+
+    <input type="submit">
+</form>
+
+
+
+</body>
+</html>
