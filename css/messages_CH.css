@@ -54,6 +54,7 @@ body, html {
 /**********************************REFACTOR BELOW****************************************************/
 
 .message {
+    border-color: darkgrey;
     border-radius: 10px;
     height: 20px;
     text-align: left;

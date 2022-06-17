@@ -1,8 +1,14 @@
 .parent {
-    border: 2px black dotted;
+    border: 10px black dashed;
     display: inline-block;
-    position: relative;
+    position: static;
 }
+.parent2{
+    border: 10px black dotted;
+    display: inline-block;
+    position: static;
+}
+
 .box {
     display: inline-block;
     background: red;
@@ -10,11 +16,10 @@
     height: 100px;
 }
 #two {
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
     background: green;
-    position: absolute;
-    /*position: relative;*/
+    position: static;
 }
 
 #float-heading {
@@ -34,6 +39,10 @@
     background: lightskyblue;
     width: 100px;
     height: 100px;
+    float: none;
+    clear: none;
+}
+#p-div {
     float: none;
     clear: none;
 }
