@@ -1,0 +1,44 @@
+#Top {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #773E67;
+    text-decoration: underline;
+}
+
+body {
+    background-color: lightgreen;
+    background-image: url("../../assets/cthulhu.jpeg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-blend-mode: difference;
+    background-attachment: fixed;
+}
+
+ul {
+    list-style: url("../../assets/tiny_cthulhu.jpeg");
+}
+
+h1 {
+    font-family: 'Tangerine', serif;
+    font-size: 48px;
+}
+
+table {
+    padding: 10px 20px;
+}
+
+tr {
+    padding: 20px 40px;
+}
+
+td {
+    padding: 30px 50px;
+}
+
+a:hover {
+     font-family: "Comic Sans MS", sans-serif;
+}

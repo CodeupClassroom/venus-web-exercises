@@ -105,4 +105,22 @@
         return setOfUniqueLanguagesSoFar;
     }, new Set());
     console.log(uniqueLanguages);
+
+    console.log("**************** FOREACH version of reduce ");
+    // let instructors = "";
+    // for (let i = 0; i < users.length; i++) {
+    //     // const user = users[i];
+    //     // console.log(user);
+    //
+    //     // concat all user names
+    //     if(users[i] != "") {
+    //         instructors += ", " + users[i].name;
+    //     }
+    // }
+    // console.log(instructors);
+
+    const allNames = users.reduce(function(instructors, user) {
+        return instructors + ", " + user.name;
+    }, "")
+    // console.log(allNames);
 })()

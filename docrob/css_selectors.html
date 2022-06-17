@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <title>CSS Selectors</title>
 
-    <link rel="stylesheet" href="css/css_selectors_done.css">
+    <link rel="stylesheet" href="css/css_selectors.css">
 </head>
 
 <!-- 6. make the body's paragraphs have a background color of light grey -->
 <body>
+    <p>I am a paragraph</p>
+
     <nav>
         <!-- 1. shrink the logo image. preserve the aspect ratio (show the stretching problem tho) -->
         <a id="nav-home" href="#"><img id="logo-cthulhu" src="../assets/cthulhu.jpeg"></a>
 
         <!-- 2. remove the text decoration from the nav links -->
         <!-- 9. using pseudo classes set the font weight to bold on hover -->
-        <a id="nav-choice-1" class="my-nav-link" href="">Menu choice 1</a>
-        <a id="nav-choice-2" class="my-nav-link" href="">Menu choice 2</a>
-        <a id="nav-choice-3" class="my-nav-link" href="">Menu choice 3</a>
+        <a id="nav-choice-1" class="my-nav-link" href="#">Menu choice 1</a>
+        <a id="nav-choice-2" class="my-nav-link" href="qwerqwer">Menu choice 2</a>
+        <a id="nav-choice-3" class="my-nav-link" href="fsdgdfgsdfgd">Menu choice 3</a>
+
     </nav>
 
-        <!-- 3. give all header (or container) h1 and h2 els a border -->
+    <button id="rotate-btn">Start</button>
+
+    <!-- 3. give all header (or container) h1 and h2 els a border -->
     <header id="container">
 
         <!-- 4. give this h1 the fancy header and extra large classes -->
@@ -46,6 +51,8 @@
         </section>
     </main>
 
+    <input type="text" value="hello world">
+
     <!-- 10. set the footer's color to purple -->
     <!-- 11. text-indent all h2 and h3 20px -->
     <!-- 12. have the footer's h2 DON'T inherit the color -->
@@ -53,6 +60,9 @@
         <h2>Big footer</h2>
         <span id="my-copyright">&copy;2022 Don't steal my awesome code!</span>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/shtuff.js"></script>
 </body>
 </html>
 
