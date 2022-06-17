@@ -1,0 +1,75 @@
+/*1. shrink the logo image. preserve the aspect ratio (show the stretching problem tho)*/
+#logo-cthulhu {
+    width: 30px;
+    height: 30px; /* don't do both as that will stretch the image */
+}
+
+/*2. remove the text decoration from the nav links*/
+.my-nav-link {
+    text-decoration: none;
+}
+
+/*3. give all header h1 and h2 els a border*/
+header h1, header h2 {
+    border: 1px solid black;
+}
+
+/*4. give this h1 the fancy header and extra large classes*/
+/*5. give this h2 a fancy header class*/
+.fancy-header {
+    color: blue;
+}
+.extra-large {
+    font-size: 200px;
+}
+
+/*6. make the body's paragraphs have a background color of light grey */
+body p {
+    background-color: lightgrey;
+}
+
+/*7. make this section's paragraphs have a border color of red */
+#section-2 p {
+    border: 1px solid red;
+}
+
+/*8. using combined selectors make this h2 fancy header a yellow backgrouynd*/
+h2.fancy-header {
+    background-color: yellowgreen;
+}
+
+/*9. using pseudo classes set the font weight to bold on hover*/
+a:hover {
+    font-weight: bold;
+}
+
+/*10. set the footer's color to purple */
+footer {
+    color: purple;
+}
+/*11. text-indent all h2 and h3 20px */
+h2 {
+    text-indent: 20px;
+}
+/*12. have the footer's h2 inherit the text-indent */
+footer h2 {
+    text-indent: inherit;
+}
+/*13. play w font-family*/
+p {
+    font-family: Chalkduster;
+}
+/*14. play w font-size for paragraphs: no font-size specified, 1em, 1.5em, and 2em*/
+.my-font-size-normal {
+    font-size: 1em;
+}
+.my-font-size-big {
+    font-size: 1.5em;
+}
+.my-font-size-bigger {
+    font-size: 2em;
+}
+/* 15. play with text-align in header, paragraph, span */
+h1, h2, h3, p, span {
+    text-align: center;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+
+    <link rel="stylesheet" href="css/css_selectors.css">
+</head>
+
+<!-- 6. make the body's paragraphs have a background color of light grey -->
+<body>
+    <p>I am a paragraph</p>
+
+    <nav>
+        <!-- 1. shrink the logo image. preserve the aspect ratio (show the stretching problem tho) -->
+        <a id="nav-home" href="#"><img id="logo-cthulhu" src="../assets/cthulhu.jpeg"></a>
+
+        <!-- 2. remove the text decoration from the nav links -->
+        <!-- 9. using pseudo classes set the font weight to bold on hover -->
+        <a id="nav-choice-1" class="my-nav-link" href="#">Menu choice 1</a>
+        <a id="nav-choice-2" class="my-nav-link" href="qwerqwer">Menu choice 2</a>
+        <a id="nav-choice-3" class="my-nav-link" href="fsdgdfgsdfgd">Menu choice 3</a>
+
+    </nav>
+
+    <button id="rotate-btn">Start</button>
+
+    <!-- 3. give all header (or container) h1 and h2 els a border -->
+    <header id="container">
+
+        <!-- 4. give this h1 the fancy header and extra large classes -->
+        <h1 class="fancy-header extra-large">CTHULHU LIVES!</h1>
+
+        <!-- 5. give this h2 a fancy header class -->
+        <!-- 8. using combining selectors make this h2 fancy header a yellowgreen backgrouynd -->
+        <h2 class="fancy-header">An H2 Heading</h2>
+    </header>
+
+    <main>
+        <section id="section-1">
+            <h3 id="section-1-heading">Section 1</h3>
+            <p id="paragraph-1-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi culpa cum dolores, ea esse exercitationem laudantium modi natus nulla obcaecati, odit quae quo rerum sint, tempora temporibus ullam vero.</p>
+            <p id="paragraph-1-2" class="my-font-size-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci architecto aspernatur culpa deleniti facilis harum hic odit, repellat sequi. Nemo porro possimus rem soluta velit? Doloribus illum quia quo?</p>
+            <p id="paragraph-1-3" class="my-font-size-big">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam assumenda autem dicta dignissimos doloremque eius ex exercitationem facilis hic incidunt iste, nulla, quas quasi, quia reiciendis sed sit vitae.</p>
+        </section>
+
+        <!-- 7. make this section's paragraphs have a 1px solid red border-->
+        <section id="section-2">
+            <h3 id="section-2-heading">Section 2</h3>
+            <p id="paragraph-2-1" class="my-font-size-bigger">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci aliquid commodi cumque, dolores exercitationem, facilis id illo molestiae, nulla praesentium quis suscipit velit vitae voluptatum! Animi modi nobis reiciendis?</p>
+        </section>
+    </main>
+
+    <input type="text" value="hello world">
+
+    <!-- 10. set the footer's color to purple -->
+    <!-- 11. text-indent all h2 and h3 20px -->
+    <!-- 12. have the footer's h2 DON'T inherit the color -->
+    <footer>
+        <h2>Big footer</h2>
+        <span id="my-copyright">&copy;2022 Don't steal my awesome code!</span>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/shtuff.js"></script>
+</body>
+</html>
+
+<!--more fun w css:-->
+<!--13. play w font-family-->
+<!--14. play w font-size for paragraphs: no font-size specified, 1em, 1.5em, and 2em-->
+<!--15. play with text-align in header, paragraph, span-->
