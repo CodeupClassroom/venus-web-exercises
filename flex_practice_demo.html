@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Margin Auto Demo</title>
+
+    <style>
+      .container1 {
+        display: flex;
+        flex-direction: row;
+      }
+      .container2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .howdy-box {
+        background-color: #0fb784;
+        border: 1px black solid;
+        font-family: Arial, sans-serif;
+        padding: 0 1em;
+      }
+
+      .margin-test {
+        margin: 0 auto;
+      }
+      .margin-test2 {
+        border: 1px black solid;
+        /*margin: 0 auto;*/
+      }
+    </style>
+
+</head>
+<body>
+  <div class="container1">
+    <div class="margin-test howdy-box">
+      <p>Howdy</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container2">
+    <div class="margin-test2 howdy-box">
+      <p>Howdy</p>
+    </div>
+    <div class="margin-test2 howdy-box">
+      <p>Howdy</p>
+    </div>
+    <div class="margin-test2 howdy-box">
+      <p>Howdy</p>
+    </div>
+    <div class="margin-test2 howdy-box">
+      <p>Howdy</p>
+    </div>
+  <div>
+
+</body>
+</html>

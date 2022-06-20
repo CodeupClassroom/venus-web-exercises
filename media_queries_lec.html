@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Queries</title>
+
+  <!-- MUST HAVE THE BELOW LINE FOR MEDIA QUERIES -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav>ul {
+      margin: 1em;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    nav li {
+      list-style: none;
+      padding-right: 1em;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    .menu-item:nth-of-type(6) {
+      margin-left: auto;
+      padding-right: 0;
+    }
+
+    .menu-separator {
+      display: none;
+      width: 6em;
+      margin: .5em 0;
+    }
+
+    .big-div {
+      background-color: #0fb784;
+      height: 200px;
+      margin: 1em;
+    }
+
+    .card {
+      border: 1px solid green;
+      background-color: silver;
+      width: 250px;
+      height: 300px;
+      text-align: center;
+      margin: .5em;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Small devices (phones and pocket devices, 360 and up) */
+    @media screen and (min-width:360px) {
+      nav>ul {
+        flex-direction: column;
+      }
+
+      .menu-separator {
+        display: inherit;
+      }
+
+      .menu-item:nth-of-type(6) {
+        margin-left: 0;
+      }
+
+      .big-div {
+        background-color: magenta;
+        height: 200px;
+      }
+    }
+
+    /* Medium devices (tablets, 768px and up) */
+    @media screen and (min-width:768px) {
+      nav>ul {
+        flex-direction: row;
+      }
+
+      .menu-separator {
+        display: none;
+      }
+
+      .menu-item:nth-of-type(6) {
+        margin-left: auto;
+      }
+
+      .big-div {
+        background-color: darkblue;
+        height: 200px;
+      }
+
+    }
+
+    /* large devices (large desktops, 1024 and up) */
+    @media screen and (min-width:1024px) {
+      nav>ul {
+        flex-direction: row;
+      }
+
+      .menu-separator {
+        display: none;
+      }
+
+      .menu-item:nth-of-type(6) {
+        margin-left: auto;
+      }
+
+      .big-div {
+        background-color: darkorange;
+        height: 200px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li class="menu-item"><a href="#">Menu Choice 1</a></li>
+      <li class="menu-item"><a href="#">Menu Choice 2</a></li>
+      <li class="menu-item"><a href="#">Menu Choice 3</a></li>
+      <li class="menu-item"><a href="#">Menu Choice 4</a></li>
+      <li class="menu-item"><hr class="menu-separator"></li>
+      <li class="menu-item"><a href="#">Menu Choice 5</a></li>
+    </ul>
+  </nav>
+
+  <hr>
+
+  <div class="big-div">
+
+  </div>
+
+  <hr>
+
+  <div class="flex-container">
+    <div class="card">
+      <h3>Card 1</h3>
+    </div>
+
+    <div class="card">
+      <h3>Card 2</h3>
+    </div>
+
+    <div class="card">
+      <h3>Card 3</h3>
+    </div>
+
+    <div class="card">
+      <h3>Card 4</h3>
+    </div>
+
+    <div class="card">
+      <h3>Card 5</h3>
+    </div>
+
+    <div class="card">
+      <h3>Card 6</h3>
+    </div>
+
+  </div>
+</body>
+</html>
