@@ -1,0 +1,23 @@
+nav {
+    display: flex;
+    background-color: grey;
+    color:black;
+
+}
+#logo{
+    width: 50%;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+
+}
+.nav-item {
+/*margin:auto;*/
+    padding: 1em;
+    color: black;
+}
+
+.nav-icon {
+    padding: 1em;
+}
+
