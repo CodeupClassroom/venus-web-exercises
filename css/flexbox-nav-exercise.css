@@ -1,18 +1,17 @@
+a:link { text-decoration: none; }
+a:hover {color: deepskyblue}
+
 nav {
     display: flex;
     background-color: grey;
-    color:black;
-
+    align-items: center;
 }
 #logo{
-    width: 50%;
     margin:auto;
-    display: flex;
-    justify-content: center;
+    font-size: 1.5em;
 
 }
 .nav-item {
-/*margin:auto;*/
     padding: 1em;
     color: black;
 }
