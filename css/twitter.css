@@ -27,11 +27,21 @@ a {
 }
 .top-nav {
     background: var(--light-bg);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 .nav {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+.nav-item {
+    /*
+    When we position navigation links we don't use float or position. We usually display the individual link elements inline-block.
+     */
+    display: inline-block;
+    padding: 1.5em;
 }
 .nav-link {
     color: var(--main-link-color);
@@ -43,6 +53,64 @@ a {
 }
 .profile {
     background: var(--light-bg);
+    height: 80px;
+}
+.profile-header {
+    float: left;
+}
+.profile-form {
+    float: right;
+    height: 80px;
+    line-height: 80px;
+}
+.profile-image {
+    position: relative;
+    top: -26px;
+    left: 5px;
+}
+
+.container {
+    margin-top: 4em;
+}
+
+.profile-details {
+    float: left;
+    width: calc(25% - 1em);
+    margin: 0 .5em;
+}
+.timeline {
+    float: left;
+    width: calc(50% - 1em);
+    margin: 0 .5em;
+}
+.who-to-follow {
+    float: right;
+    width: calc(25% - 1em);
+    margin: 0 .5em;
+}
+
+.media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    padding: .5em;
+    overflow: auto;
+}
+.media-image {
+    max-width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+.media-body {
+    float: left;
+    width: calc(100% - 50px);
+}
+.profile-items {
+    list-style: none;
+    padding: 0;
+}
+.profile-entry {
+    margin: .5em;
 }
 .btn {
     border: 1px solid var(--main-link-color);
@@ -51,6 +119,7 @@ a {
     font-weight: bold;
     padding: 8px;
     border-radius: 5px;
+    /*line-height: 80px;*/
 }
 .btn-large {
     font-size: 1.3em;

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Basics Examples</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Helvetica,sans-serif;
+            font-weight: bold;
+        }
+        /* 1. make this a flexbox container*/
+        .flex-container {
+            display: flex;
+            /* 2. play around with this value */
+            flex-direction: row;
+
+            /* 3. play around with this value. this is MAIN axis */
+            justify-content: flex-start;
+
+            /* 4. play around with this value. this is CROSS axis. default is stretch */
+            align-items: stretch;
+
+            /* 5. play around with flex wrap. default is no wrap */
+            flex-wrap: nowrap;
+
+            /* 6. play around with align-content. this is CROSS axis. default is normal */
+            align-content: normal;
+
+            width: 100%;
+            /*height: 100px;*/
+            border: 3px solid goldenrod;
+        }
+        .flex-item {
+            background: #BFD45D;
+            border: 2px solid #F9EFD6;
+            padding: 1em;
+        }
+        /* 7. play around with order */
+        /* 8. play around with align-self */
+        /* 9. play around with flex-grow */
+        #item-1 {
+            order: 0;
+            align-self: normal;
+            flex-grow: inherit;
+        }
+        #item-3 {
+            order: 0;
+            align-self: normal;
+            flex-grow: inherit;
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+    <div id="item-1" class="flex-item">Item 1</div>
+    <div id="item-2" class="flex-item">Item 2</div>
+    <div id="item-3" class="flex-item">Item 3</div>
+    <div id="item-4" class="flex-item">Item 4</div>
+    <div id="item-5" class="flex-item">Item 5</div>
+    <div id="item-6" class="flex-item">Item 6</div>
+    <div id="item-7" class="flex-item">Item 7</div>
+    <div id="item-8" class="flex-item">Item 8</div>
+    <div id="item-9" class="flex-item">Item 9</div>
+    <div id="item-10" class="flex-item">Item 10</div>
+</div>
+
+</body>
+</html>
