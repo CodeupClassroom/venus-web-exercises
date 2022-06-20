@@ -1,0 +1,22 @@
+a:link { text-decoration: none; }
+a:hover {color: deepskyblue}
+
+nav {
+    display: flex;
+    background-color: grey;
+    align-items: center;
+}
+#logo{
+    margin:auto;
+    font-size: 1.5em;
+
+}
+.nav-item {
+    padding: 1em;
+    color: black;
+}
+
+.nav-icon {
+    padding: 1em;
+}
+
