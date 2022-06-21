@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap Intro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Your custom css styles go here -->
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Docrob's Old-fashioned Bootstrap Intro</h1>
+
+<div class="container-fluid">
+    <h3>Alerts</h3>
+        <h5>I stole this from <a href="https://getbootstrap.com/docs/5.2/components/alerts/">https://getbootstrap.com/docs/5.2/components/alerts/</a></h5>
+
+        <div class="alert alert-success" role="alert">
+            A simple success alert—check it out!
+        </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <span class="badge bg-secondary">Oi!</span> A simple warning alert—check it out!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <hr>
+
+    <h3>Cards</h3>
+
+        <div class="card" style="width: 18rem;">
+            <img src="assets/cthulhu.jpeg" class="card-img-top" alt="cthulhu">
+            <div class="card-body">
+                <h5 class="card-title text-danger ">Cthulhu</h5>
+                <p class="card-text">
+                    <strong>Attack:</strong> 5 bazillion
+                    <br>
+                    <strong>Defense:</strong> 0 (pops when your boat runs into him)
+                </p>
+                <a href="#" class="btn btn-primary">Run away!</a>
+            </div>
+        </div>
+
+    <hr>
+
+    <h3>Inputs</h3>
+        <form class="p-1 border border-success">
+            <label for="text-1" class="form-label">Type something:</label>
+            <input type="text" class="form-control" id="text-1" placeholder="Enter some text here">
+            <button class="mt-2 btn-primary" type="submit">Save</button>
+        </form>
+    <hr>
+
+    <h3>Selects</h3>
+        <label for="select1" class="form-label">Select something:</label>
+        <select class="form-control" id="select1">
+            <option value="option1">Choice 1</option>
+            <option selected value="option2">Choice 2</option>
+            <option value="option3">Choice 3</option>
+            <option value="option4">Choice 4</option>
+        </select>
+    <hr>
+
+    <h3>Checkbox group</h3>
+
+    <label class="form-label">Check some stuff:</label>
+        <div class="form-check">
+            <label class="form-check-label" for="check1">
+                Check 1
+            </label>
+            <input class="form-check-input" type="checkbox" value="" id="check1">
+        </div>
+        <div class="form-check">
+            <label class="form-check-label" for="check2">
+                Check 2
+            </label>
+            <input class="form-check-input" type="checkbox" value="" id="check2">
+        </div>
+        <div class="form-check">
+            <label class="form-check-label" for="check3">
+                Check 3
+            </label>
+            <input class="form-check-input" type="checkbox" value="" id="check3">
+        </div>
+
+    <hr>
+
+    <h3>Tabs</h3>
+
+        <ul class="nav nav-tabs" id="myTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="page1-tab" data-bs-toggle="tab" data-bs-target="#page1" aria-current="page" href="#page1">Page 1</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="page2-tab" data-bs-toggle="tab" data-bs-target="#page2" href="#page2">Page 2</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="page3-tab" data-bs-toggle="tab" data-bs-target="#page3" href="#page3">Page 3</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="page1" role="tabpanel">
+                <h5>Page 1</h5>
+                <p class="text-bg-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto delectus eaque, earum error esse et fuga fugit neque soluta tenetur. Aut delectus fugit iste magni molestiae obcaecati quidem recusandae repellat, sapiente voluptatem. Ab aliquid aspernatur commodi consequatur, consequuntur corporis eos expedita hic impedit iure labore maiores necessitatibus nemo officiis, pariatur quisquam quod reprehenderit saepe voluptas voluptatibus! Amet aspernatur autem consequatur deserunt dignissimos dolore, doloremque ducimus eius, error est ex facere fugiat illo in laborum, nemo perferendis quae quia quo ratione repudiandae sequi ut. Alias autem consequatur dolor ducimus ex, fugiat harum in laudantium molestias nihil quaerat quas, quo saepe similique vel voluptatem voluptatum. Aperiam assumenda atque deleniti dolore doloribus ea eos ex facilis fugit itaque maiores minima modi nam nisi nostrum odit officiis perspiciatis, quaerat qui repudiandae rerum sed, sequi, sint soluta tempora ullam unde voluptates! Accusamus ad asperiores aspernatur cum, dignissimos ex exercitationem fugit ipsa, iure iusto, laudantium nostrum quod sapiente sit suscipit velit veritatis! Ad adipisci aperiam cum dignissimos dolor dolorem ducimus eaque earum eligendi ex, excepturi libero minus neque perferendis provident quae quisquam quo quos tempora totam vel, veniam voluptatibus. Accusamus ad beatae facere minima nesciunt nobis pariatur sint. Asperiores aut consectetur corporis illo quisquam, rerum ut!</p>
+            </div>
+            <div class="tab-pane fade" id="page2" role="tabpanel">
+                <h5>Page 2</h5>
+                <div class="position-relative">
+                    <div class="position-absolute top-0 start-0 bg-warning text-danger p-3">Info with contrasting color</div>
+                    <img style="z-index: 2000" class="opacity-50" src="assets/cthulhu.jpeg">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="page3" role="tabpanel">
+                <h5>Page 3</h5>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <hr>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- Your custom JS goes here -->
+</body>
+</html>
