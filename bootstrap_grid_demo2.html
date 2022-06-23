@@ -18,8 +18,10 @@
 
         .box {
             background-color: #0fb784;
-            width: 40px;
-            height: 40px;
+            border-radius: 100%;
+            width: 60px;
+            height: 60px;
+            text-align: center;
             margin-bottom: 20px;
         }
 
@@ -33,16 +35,16 @@
 <div class="container">
 
     <div class="row">
-        <div class="offset-3 offset-md-2 col-2 col-md-1">
+        <div class="offset-3 offset-md-1 col-2 col-md-1">
             <div class="box">1</div>
         </div>
-        <div class="offset-2 offset-md-1 col-2 col-md-1">
+        <div class="offset-2 offset-md-2 col-2 col-md-1">
             <div class="box">2</div>
         </div>
         <div class="offset-3 offset-md-2 col-2 col-md-1">
             <div class="box">3</div>
         </div>
-        <div class="offset-2 offset-md-1 col-2 col-md-1">
+        <div class="offset-2 offset-md-2 col-2 col-md-1">
             <div class="box">4</div>
         </div>
     </div>
@@ -54,11 +56,11 @@
 <h4>Grid with flexboxes, 2 circles per flexbox</h4>
 <div class="container">
     <div class="row">
-        <div class="my-row col-12 col-md-6">
+        <div class="my-row offset-3 offset-md-0 col-6 col-md-6 offset-3 offset-md-0">
             <div class="box">1</div>
             <div class="box">2</div>
         </div>
-        <div class="my-row col-12 col-md-6">
+        <div class="my-row offset-3 offset-md-0 col-6 col-md-6 offset-3 offset-md-0">
             <div class="box">3</div>
             <div class="box">4</div>
         </div>
