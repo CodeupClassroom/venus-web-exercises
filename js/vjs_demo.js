@@ -24,6 +24,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     elements = document.querySelectorAll("*");
     console.log(elements);
 
+    console.log(elements[0]);
+    console.log(elements[0].parentElement);
+    console.log(elements[0].parentNode);
+
     // mouse events
     document.querySelector("#box1").addEventListener("click", function (event) {
         const objectClicked = event.target;
