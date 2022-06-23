@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // css
     document.querySelector("#box3").style.width = "200px";
 
-    // ok this sucks
+    // ok this sucks a little
     document.querySelectorAll(".box").forEach(function (obj) {
         obj.style.backgroundColor = "goldenrod";
     });

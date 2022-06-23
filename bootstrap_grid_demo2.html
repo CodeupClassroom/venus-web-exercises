@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap Grid Demo 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/bootstrap-grid-helper.css">
+
+    <style>
+        .my-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .box {
+            background-color: #0fb784;
+            width: 40px;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h2>Bootstrap Grid Demo 2</h2>
+
+<h4>Using grid to layout </h4>
+<div class="container">
+
+    <div class="row">
+        <div class="offset-3 offset-md-2 col-2 col-md-1">
+            <div class="box">
+            </div>
+        </div>
+        <div class="offset-2 offset-md-1 col-2 col-md-1">
+            <div class="box">
+            </div>
+        </div>
+        <div class="offset-3 offset-md-2 col-2 col-md-1">
+            <div class="box">
+            </div>
+        </div>
+        <div class="offset-2 offset-md-1 col-2 col-md-1">
+            <div class="box">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="my-row col-12 col-md-6">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="my-row col-12 col-md-6">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
