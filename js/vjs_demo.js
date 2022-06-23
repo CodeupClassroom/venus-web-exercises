@@ -1,6 +1,6 @@
 // wait for dom to load
 // from https://stackoverflow.com/questions/2304941/what-is-the-non-jquery-equivalent-of-document-ready
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function () {
     console.log("DOM has loaded");
 
     // select an element by id
@@ -78,10 +78,66 @@ document.addEventListener("DOMContentLoaded", function() {
     // css
     document.querySelector("#box3").style.width = "200px";
 
-    // ok this sucks a little
+    // ok this isn't as nice as jquery, but it's not too bad
     document.querySelectorAll(".box").forEach(function (obj) {
         obj.style.backgroundColor = "goldenrod";
     });
 
+    document.querySelector("#box3").classList.add("white-text");
+    document.querySelector("#box3").classList.remove("white-text");
+    document.querySelector("#box3").classList.toggle("white-text");
+    document.querySelector("#box3").classList.toggle("white-text");
+
+    // traversing
+
+    // each() is like document.querySelectorAll("...").forEach(function(...
+
+    // parent()
+    let parent = document.querySelector("#box3").parentElement;
+    console.log(parent);
+
+    // children()
+    console.log(parent.children);
+
+    // first()
+    console.log(parent.children[0]);
+
+    // last()
+    console.log(parent.children[parent.children.length - 1]);
+    parent.children[parent.children.length - 1].style
+
+    // next()
+    console.log(parent.children[0].nextElementSibling);
+
+    // fetch instead of ajax. not as simple as ajax
+    fetch('https://pokeapi.co/api/v2/pokemon/charmander')
+        .then(response => response.json())
+        .then(data => console.log(data));
+
+    // use async/await to make it a simpler function
+    async function getPokeStats(pokeName) {
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + pokeName);
+        return response.json();
+    }
+
+    getPokeStats("pikachu").then(function(pokeStats) {
+        console.log(pokeStats);
+    });
+    // or this
+    // console.log(await getPokeStats("pikachu"));
+
+    // catch and finally
+    fetch('https://pokeapi.co/api/v2/pokemon/charmander')
+        .then(function(response) {
+            console.log("response code received: " + response.status);
+            // console.log("response status text received: " + response.statusText);
+            return response.json();
+        }).then(function(data) {
+            console.log(data);
+        }).catch(function(error) {
+            console.error('Error:', error);
+        }).finally(function() {
+            console.log("do some cleanup here if necessary");
+        });
 
 });
