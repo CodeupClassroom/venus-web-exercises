@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM DOM Intro</title>
+</head>
+<body>
+
+<script>
+    // bom methods
+    let response = window.confirm("hello?");
+    window.prompt("enter something");
+
+    // redirect via location
+
+    // reload/refresh the page (may come from cache)
+
+    function sayHello() {
+        console.log("hello");
+    }
+
+    // set a timeout
+    // timeout in 10 sec
+    const myTimer = setTimeout(sayHello, 10000);
+
+    // set an interval (spend some time with these)
+    // every second
+    const myInterval = setInterval(function() {
+        console.log("howdy");
+    }, 1000);
+
+    // remove/cancel an interval
+    // without a handle to the interval or the timeout!!!
+    window.clearInterval(myInterval);
+    // can also cancel the timeout
+    window.clearTimeout(myTimer);
+
+</script>
+</body>
+</html>
