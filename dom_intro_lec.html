@@ -53,21 +53,36 @@
     "use strict";
 
     (function() {
-
         // get an element using its id
+        let box1 = document.getElementById("box1");
+        // console.log(box1);
 
         // play around with the element
+        // console.log(box1.innerText);
 
             // show its content as html and text
+        console.log(box1.innerHTML);
+        box1.innerHTML = "<p>Hello Jimmy</p>";
+        console.log(box1.innerHTML);
 
             // show some its css properties
+        console.log("box1's bg is " + box1.style.backgroundColor);
+        let otherStyle = getComputedStyle(box1);
+        console.log("box1's bg is " + otherStyle.backgroundColor);
+
+        // box1.style.backgroundColor = "#FF0000";
 
             // change its text
+        box1.style.fontSize = "3em";
 
             // change a css property or 2
             // show the associative array syntax for this as well
+        // if you want to use kabob case
+        // box1.style["background-color"] = "green";
 
         // get boxes by myBox class
+        let boxes = document.getElementsByClassName("myBox");
+        console.log(boxes);
 
             // show their font-size
 
