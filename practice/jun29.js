@@ -2,13 +2,13 @@
 
 (function() {
 
+
     // GUESSING GAME
     // computer starts with # from 1 to 10
     let answer = randomNumberInRange(1, 10);
     console.log("answer is " + answer);
 
     let done = false;
-
 
     /*
     COMMAND LOOPS
@@ -34,6 +34,11 @@
     // after quitting keep going from here
     console.log("program is over");
 
+    function randomNumberInRange (minVal, maxVal) {
+        // inclusive
+        return Math.floor(Math.random() * maxVal) + minVal;
+    }
+
     function processUserChoice(userChoice) {
         if (userChoice === "quit" || userChoice === "stop") {
             done = true;
@@ -49,9 +54,6 @@
         }
     }
 
-    function randomNumberInRange(minVal, maxVal) {
-        // inclusive
-        return Math.floor(Math.random() * maxVal) + minVal;
-    }
+
 
 })();
