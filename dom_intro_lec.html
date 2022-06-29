@@ -55,24 +55,50 @@
     (function() {
 
         // get an element using its id
+        let element = document.getElementById("box1");
 
         // play around with the element
 
             // show its content as html and text
+        console.log(element.innerHTML);
+        console.log(element.innerText);
 
-            // show some its css properties
+            // show some its css properties INLINE ONLY
+        console.log(element.style.border); // THIS ONLY WORKS FOR INLINE STYLES
+        console.log(element.style.backgroundColor); // THIS ONLY WORKS FOR INLINE STYLES
 
-            // change its text
+            // how to read its computed style? e.g., from a class
+            // https://zellwk.com/blog/css-values-in-js/
+        let otherStyle = getComputedStyle(element);
+        console.log(otherStyle.backgroundColor);
+        console.log(otherStyle.borderColor);
 
-            // change a css property or 2
-            // show the associative array syntax for this as well
+        // change its text
+        element.innerText = "Howdy world!";
+        element.innerHTML = "<p>Howdy world!</p>";
+
+            // change a css property or 2 (INLINE ONLY)
+        element.style.backgroundColor = "#777777";
+
+            // show the associative array syntax for this as well (INLINE ONLY)
+        element.style.fontSize = "4em";
 
         // get boxes by myBox class
+        let boxes = document.getElementsByClassName('myBox');
 
-            // show their font-size
+        // tagname is very similar
+        // let elements = document.getElementsByTagName('div');
 
+        // NOTE: this returns an HTMLCollection!!!
+        console.log(boxes);
+
+            // show their INLINE font-size
+        for (let i = 0; i < boxes.length; i++) {
+            const box = boxes[i];
+            console.log("box fontsize " + box.style.fontSize);
+        }
             // change one of their font-sizes to 4em
-
+        boxes[1].style.fontSize = "3em";
 
         // get a form element by name
 
