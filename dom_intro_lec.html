@@ -23,7 +23,7 @@
 <body>
 
 <div id="container1" class="container">
-    <div id="box1" class="myBox myBoxColor">
+    <div id="box1" class="myBox myBoxColor" data-id="1111">
         <p>Hello world</p>
     </div>
 
@@ -38,7 +38,7 @@
     <form name="login">
         <div>
             <label for="username">Username</label>
-            <input id="username" name="username" type="text" data-id="555">
+            <input id="username" name="usernameName" type="text" data-id="555">
         </div>
         <div>
             <label for="password">Password</label>
@@ -85,17 +85,36 @@
         console.log(boxes);
 
             // show their font-size
+        // boxes.forEach(function(box) {
+        //     console.log(box);
+        // });
+        for (let i = 0; i < boxes.length; i++) {
+            const box = boxes[i];
+            // console.log(box.style.fontSize);
+            box.style.fontSize = "4em";
+        }
 
             // change one of their font-sizes to 4em
 
+        let divs = document.getElementsByTagName("div");
+        for (let i = 0; i < divs.length; i++) {
+            // divs[i].classList = undefined;
+        }
 
         // get a form element by name
-
+        // document.forms.login.usernameName.value = "bob";
             // get its value
 
             // set its value
 
         // show hasAttribute, getAttribute, setAttribute, removeAttribute
+        console.log(box1.hasAttribute("href"));
+        console.log(box1.hasAttribute("data-id"));
+        if(box1.hasAttribute("data-id")) {
+            console.log(box1.getAttribute("data-id"));
+            box1.setAttribute("data-id", "2222");
+        }
+
         // use class and href
 
         // feature and explain the "data-id" attribute (and any data-* attribute)
@@ -103,12 +122,33 @@
         // create a new hr and add it as a child to container1
 
         // create a new box with myBox class and add it to container1
+        const box3 = document.createElement("div");
+        box3.innerHTML = "<p>Who's Jimmy?</p>";
+        // const box3Text = document.createTextNode("Who's Jimmy?");
+        box3.classList.add("myBox");
+        box3.classList.add("bg-secondary");
+        // box3.appendChild(box3Text);
+        const container1 = document.getElementById("container1");
+
+        container1.insertBefore(box3, box1);
+        console.log(container1);
+
         // try to use bootstrap color class like bg-primary and text-white
         // be sure to give it an id of box3
 
         // remove the element with id box1
 
         // create a new box and replace box2 with box4
+
+        // use querySelector to get a one targeted element
+        let myElement = document.querySelector("#box1");
+        console.log(myElement);
+
+        let myElements = document.querySelectorAll("div");
+        console.log(myElements);
+        myElements.forEach(function(myElement) {
+            console.log(myElement);
+        })
 
     })();
 </script>
