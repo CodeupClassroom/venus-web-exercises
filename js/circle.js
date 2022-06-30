@@ -14,6 +14,7 @@
 
         logInfo: function (doRounding) {
             // TODO: complete this method.
+
             let area = this.getArea();
 
             // If doRounding is true, round the result to the nearest integer.
@@ -34,6 +35,7 @@
     console.log("=======================================================");
     // TODO: Change the radius of the circle to 5.
     // USE DOT NOTATION HERE TO CHANGE THE CIRCLES RADIUS TO 5
+
     circle.radius = 5;
 
     // log info about the circle

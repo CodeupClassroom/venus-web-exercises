@@ -35,7 +35,7 @@
 
     <hr>
 
-    <form name="login">
+    <form name="my_form">
         <div>
             <label for="username">Username</label>
             <input id="username" name="usernameName" type="text" data-id="555">
@@ -61,6 +61,7 @@
         // console.log(box1.innerText);
 
             // show its content as html and text
+
         console.log(box1.innerHTML);
         box1.innerHTML = "<p>Hello Jimmy</p>";
         console.log(box1.innerHTML);
@@ -94,7 +95,17 @@
             box.style.fontSize = "4em";
         }
 
+
+        // NOTE: this returns an HTMLCollection!!!
+        console.log(boxes);
+
+            // show their INLINE font-size
+        for (let i = 0; i < boxes.length; i++) {
+            const box = boxes[i];
+            console.log("box fontsize " + box.style.fontSize);
+        }
             // change one of their font-sizes to 4em
+
 
         let divs = document.getElementsByTagName("div");
         for (let i = 0; i < divs.length; i++) {
