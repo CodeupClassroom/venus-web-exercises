@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM Intro</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+
+    (function() {
+
+        // bom methods
+        // let response = window.confirm("hello?");
+        // window.prompt("enter something");
+
+        // redirect via location
+        // window.location = "https://google.com";
+
+        // reload/refresh the page (may come from cache)
+        // window.location.reload();
+
+        // add a function here to use for the timer like sayHello
+        function sayHello() {
+            window.clearInterval(interval);
+            console.log("Hello");
+        }
+
+        // set a timeout
+        // timeout in 10 sec
+        const timer = window.setTimeout(sayHello, 5000);
+
+        // set an interval (spend some time with these)
+        // every second
+        const interval = window.setInterval(function() {
+            console.log("howdy");
+        }, 2000);
+
+        // remove/cancel an interval
+        // without a handle to the interval or the timeout!!!
+        // window.clearTimeout(timer);
+        // window.clearInterval(interval);
+        // can also cancel the timeout
+
+    })()
+</script>
+</body>
+</html>

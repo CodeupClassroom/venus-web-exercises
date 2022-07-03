@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Query and Modify</title>
+</head>
+<body>
+
+<h1 id="main-header">Hello World!</h1>
+<ul>
+    <li data-dbid="1">Item 1</li>
+    <li data-dbid="2">Item 2</li>
+    <li data-dbid="3">Item 3</li>
+    <li data-dbid="4">Item 4</li>
+    <li data-dbid="5">Item 5</li>
+</ul>
+<h2 id="sub-header">Hello Again.</h2>
+<p class="sub-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<button id="button1">Button 1</button>
+<button id="button2">Button 2</button>
+<button id="button3">Button 3</button>
+<button id="button4">Button 4</button>
+<script>
+    (function() {
+        "use strict";
+
+        function f1() {
+            // TODO: Uncomment next line and get the main header element by id
+            const mainHeader = document.getElementById("main-header");
+
+            // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+            mainHeader.innerHTML = "JavaScript is Cool";
+        }
+
+        function f2() {
+            // TODO: Uncomment the next line and get the sub header element by id
+            const subHeader = document.getElementById("sub-header");
+            ;
+
+            // TODO: Set the text color of subHeader to blue
+            subHeader.style.color = "blue";
+        }
+
+        function f3() {
+            // TODO: Uncomment the next line and get all list items
+            const listItems = document.getElementsByTagName("li");
+
+            // TODO: Set text color on every other list item to grey
+            // TODO: Set text color of li with data-dbid = 1 to blue
+            for (let i = 1; i < listItems.length; i += 2) {
+                // if(i % 2 === 0) {
+                listItems[i].style.color = "grey";
+                // }
+            }
+
+            // look thru all list items and set those with data-dbid = 1 to blue
+            for (let i = 0; i < listItems.length; i++) {
+                if (listItems[i].getAttribute("data-dbid") == 1) {
+                    listItems[i].style.color = "blue";
+                }
+            }
+        }
+
+        function f4() {
+            // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+            const subParagraphs = document.getElementsByClassName("sub-paragraph");
+
+            // TODO: Change the text in the first AND ONLY sub paragraph to "Mission Accomplished!"
+            subParagraphs[0].innerText = "Mission Accomplished!";
+        }
+
+        const button1 = document.querySelector("#button1");
+        button1.addEventListener("click", f1);
+
+        const button2 = document.getElementById("button2");
+        button2.addEventListener("click", f2);
+
+        const button3 = document.getElementById("button3");
+        button3.addEventListener("click", f3);
+
+        const button4 = document.getElementById("button4");
+        button4.addEventListener("click", f4);
+
+    })();
+</script>
+</body>
+</html>
