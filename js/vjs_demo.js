@@ -95,24 +95,30 @@ document.addEventListener("DOMContentLoaded", async function () {
     // parent()
     let parent = document.querySelector("#box3").parentElement;
     console.log(parent);
+    console.log(parent.parentElement);
 
     // children()
     console.log(parent.children);
 
     // first()
     console.log(parent.children[0]);
+    console.log(parent.firstElementChild);
+    parent.firstElementChild.style.backgroundColor = "blue";
+    parent.children[0].style.color = "red";
 
     // last()
+    parent.children[parent.children.length - 1].style.backgroundColor = "green";
     console.log(parent.children[parent.children.length - 1]);
-    parent.children[parent.children.length - 1].style
 
     // next()
     console.log(parent.children[0].nextElementSibling);
 
     // fetch instead of ajax. not as simple as ajax
     fetch('https://pokeapi.co/api/v2/pokemon/charmander')
-        .then(response => response.json())
-        .then(data => console.log(data));
+        .then(function(response) {
+            // console.log(response);
+            return response.json();
+        }).then(data => console.log(data));
 
     // use async/await to make it a simpler function
     async function getPokeStats(pokeName) {
@@ -129,6 +135,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // catch and finally
     fetch('https://pokeapi.co/api/v2/pokemon/charmander')
         .then(function(response) {
+            console.log(response);
             console.log("response code received: " + response.status);
             // console.log("response status text received: " + response.statusText);
             return response.json();
@@ -139,5 +146,35 @@ document.addEventListener("DOMContentLoaded", async function () {
         }).finally(function() {
             console.log("do some cleanup here if necessary");
         });
+
+    const OPEN_WEATHER_APPID = "59e1b99e68e6d9bdb350bf932c7ac068";
+    let queryParams = new URLSearchParams({
+        APPID: OPEN_WEATHER_APPID,
+        q: "San Antonio, US"
+    });
+    fetch("http://api.openweathermap.org/data/2.5/weather?" + queryParams, {
+        method: "GET"
+        }
+    ).then(async function(response) {
+        console.log(await response.json());
+    });
+
+    queryParams = new URLSearchParams({
+        APPID: OPEN_WEATHER_APPID,
+        lat:    29.423017,
+        lon:   -98.48527,
+        units: "imperial"
+    });
+// concat the query parameters onto the URL
+    fetch("http://api.openweathermap.org/data/2.5/onecall?" + queryParams, {
+            method: "GET"
+        }
+    ).then(async function(response) {
+        // use await to wait for the json data and then do something with it
+        const data = await response.json();
+        console.log('The entire response:', data);
+        console.log('Diving in - here is current information: ', data.current);
+        console.log('A step further - information for tomorrow: ', data.daily[1]);
+    });
 
 });
