@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Exam Practice</title>
+</head>
+<body>
+
+<h1 id="h1-1">Good morning</h1>
+
+<p id="p1-2">This is a paragraph</p>
+<button id="b1-2">Click to change the paragraph</button>
+
+<script>
+    "use strict";
+
+    (function() {
+        document.addEventListener("DOMContentLoaded", function () {
+            // your code goes here
+
+            // problem #1
+            // make the h1 with the id of "h1-1" say "Hello World!"
+            // 1. get a JS variable that targets the h1 using getElementById or querySelector
+            // 2. change its text using
+            const h1 = document.querySelector("#h1-1");
+            h1.innerText = "Hello World!";
+
+            // problem #2
+            // when the button with id b1-2 is clicked and change the paragraph with id p1-2 text
+            // to "The quick brown fox jumped over the lazy dog"
+            // 1. create a click listener for the button and use an anonymous function
+            // 2. in the anonymous function,
+            document.querySelector("#b1-2").addEventListener("click", function() {
+                const p1 = document.querySelector("#p1-2");
+                p1.innerText = "The quick brown fox jumped over the lazy dog";
+            });
+
+        });
+
+    })();
+</script>
+</body>
+</html>
