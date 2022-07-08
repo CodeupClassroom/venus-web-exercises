@@ -32,12 +32,16 @@
 
 <br>
 
-<a id="a1-3" href="https://www.google.com" class="red-border">Click for Google</a>
+<a id="a1-3" href="https://www.google.com">Click for Google</a>
 
 <br>
 <button id="b4">Click to change h1 text to hot pink</button>
 
 <p id="p4" class="big-font blue-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda at culpa cupiditate deleniti eveniet, excepturi facere facilis fugit inventore iure laboriosam libero non nostrum nulla quasi quidem quo reiciendis rem similique sint tempora temporibus ut! Debitis eius hic minima reiciendis sed sint soluta. Beatae laboriosam quibusdam repellat velit voluptate!</p>
+
+<hr>
+<input id="text5" type="text" value="">
+<p id="p5"></p>
 
 <script>
     "use strict";
@@ -74,7 +78,7 @@
             console.log("a1's href is " + a1.getAttribute("href"));
 
             // set the href to something else
-            a1.setAttribute("href", "https://realultimatepower.net");
+            a1.setAttribute("href", "https://java.codeup.com");
             console.log("a1's href is " + a1.getAttribute("href"));
 
             // set an attribute that a1 does not yet have
@@ -110,6 +114,14 @@
                 // this.classList.remove("red-border");
                 event.target.classList.remove("red-border");
             });
+
+            // problem 5: when the user types in the text input with id "input5"
+            // , copy what was typed into the paragraph with id p5
+            const text5 = document.querySelector("#text5");
+            text5.addEventListener("keydown", function(event) {
+                const p5 = document.querySelector("#p5");
+                p5.innerText = this.value;
+            })
         });
 
     })();
