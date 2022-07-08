@@ -27,6 +27,8 @@
             let top = 5;
             let left = 5;
 
+            let keyArray = [];
+
             // add a keydown listener on the body for when w a s and d are pressed
             // and a keyup listener for grins
             const body = document.querySelector("body");
@@ -47,6 +49,11 @@
             // this is the named function that will be used for the keydown event
             function moveButton(keyEvent) {
                 const whichKey = keyEvent.key;
+
+                // keep track of the keys that have been pressed
+                keyArray.push(whichKey);
+                console.log(keyArray);
+
                 // w = move button up 1
                 // s = move button down 1
                 const button = document.querySelector("#b1");
