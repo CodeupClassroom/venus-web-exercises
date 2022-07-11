@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>More Exam Practice</title>
+
+    <style>
+        .boldFont {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<p id="p1">Change this text</p>
+
+<ul id="ul2">
+    <li class="my-li">Make me bold</li>
+    <li class="my-li">Make me bold</li>
+    <li class="my-li">Make me bold</li>
+</ul>
+<button id="b2">Click to make list items bold</button>
+
+<ul id="ul3">
+    <li class="my-li3">Make my text blue</li>
+    <li class="my-li3">Make my text blue</li>
+    <li class="my-li3">Make my text blue</li>
+    <li class="my-li3">Make my text blue</li>
+</ul>
+<script>
+    // 1. when the p with id p1 is clicked, change its text to "Hello World"
+    const p1 = document.querySelector("#p1");
+    p1.addEventListener("click", function(event) {
+        p1.innerText = "Hello World";
+    });
+
+    // 2. when button b2 is clicked, change the lis with class my-li to bold
+    document.querySelector("#b2").addEventListener("click", function(event){
+        const lis = document.querySelectorAll(".my-li");
+        // this works:
+        // lis[0].parentElement.style.fontWeight = "bold";
+
+        // this will change the 2nd element in the array to bold
+        // lis[1].style.fontWeight = "bold";
+
+        // and this works:
+        for (let i = 0; i < lis.length; i++) {
+            // make each element in lis bold
+            // how to target the element at index i?
+            lis[i].style.fontWeight = "bold";
+        }
+    });
+
+    // 3. when any of the lis with class my-lis3 are clicked, make THAT li's text blue
+    const myLIS3 = document.querySelectorAll(".my-li3");
+    // loop over the array of lis and add and event listener to each
+    for (let i = 0; i < myLIS3.length; i++) {
+        myLIS3[i].addEventListener("click", function(event) {
+            this.style.color = "blue";
+        })
+    }
+
+</script>
+</body>
+</html>
