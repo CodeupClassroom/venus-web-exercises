@@ -66,6 +66,43 @@ function birthdayCakeCandles(candles) {
     return counts[maxHeight];
 }
 
+function timeConversion(s) {
+    // Write your code here
+    const timeParts = s.substring(0, 8).split(":");
+    const ampm = s.substring(8, s.length);
+
+    let newHours = parseInt(timeParts[0]);
+    if(ampm === "PM") {
+        if(newHours < 12)
+            newHours += 12;
+    } else if(newHours == 12)
+        newHours = 0;
+    console.log(("" + newHours).padStart(2, "0") + ":" + timeParts[1] + ":" + timeParts[2]);
+
+}
+
+function flippingBits(n) {
+    // Write your code here
+    let num = new Uint32Array(3);
+    num[0] = n;
+    num[1] = 0xffffffff;
+    num[2] = num[0] ^ num[1];
+    return num[2];
+}
+
+function gradingStudents(grades) {
+    // Write your code here
+    for(let i = 0; i < grades.length; i++) {
+        if(grades[i] < 38)
+            return grades;
+        const target = (Math.round(grades[i] / 5)) * 5;
+        console.log(target + " " + grades[i]);
+        if (target - grades[i] < 3)
+            grades[i] = target;
+    }
+    return grades;
+}
+
 console.log(diagonalDifference(arr));
 
 plusMinus([-4, 3, -9, 0, 4, 1]);
@@ -73,3 +110,9 @@ plusMinus([-4, 3, -9, 0, 4, 1]);
 staircase(5);
 
 console.log(birthdayCakeCandles([3, 2, 1, 3]));
+
+timeConversion("07:05:45PM");
+
+console.log(flippingBits(1));
+
+console.log(gradingStudents([73, 67, 38, 33]))

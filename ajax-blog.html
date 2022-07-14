@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Blog</title>
+
+  <style>
+      body {
+          /*background-color: saddlebrown;*/
+          font-family: sans-serif;
+      }
+    .my-blog-post {
+        border: 1px solid green;
+        border-radius: 12px;
+        padding: 0 15px;
+        margin-bottom: 10px;
+        background-color: navajowhite;
+    }
+  </style>
+</head>
+<body>
+  <div id="my-posts">
+
+  </div>
+<script>
+( function() {
+    "use strict";
+    document.addEventListener("DOMContentLoaded", async function () {
+        // put stuff here
+
+        // 1. read in the tools data using fetch
+        const posts = await fetch("data/blog.json")
+            .then(function(response) {
+                if(response.status !== 200) {
+                    console.log("Error, cannot fetch data!");
+                    return [];
+                }
+                // else
+                // if we get here, then response.status === 200
+                return response.json();
+            }).then(function(data) {
+                return data;
+            })
+
+        // make a div for each blog post and add it to
+        const myPosts = document.querySelector("#my-posts");
+        for (let i = 0; i < posts.length; i++) {
+            const newPost = `
+<div>
+    <p>${posts[i].title}</p>
+    <p>${posts[i].content}</p>
+    <p>${posts[i].categories.join(", ")}</p>
+    <p>${posts[i].date}</p>
+</div>
+`;
+            myPosts.innerHTML += newPost;
+        }
+    })
+
+})();
+</script>
+</body>
+</html>

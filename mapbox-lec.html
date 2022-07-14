@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My First Mapbox Map!</h1>
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<button id="zoom-in">Zoom In</button>
+<button id="drop-marker">Drop Marker</button>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Custom JS -->
+<script src="js/keys.js"></script>
+<script>
+    (async function() {
+
+        mapboxgl.accessToken = MAPBOX_API_KEY;
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 10,
+            center: [-98, 28]
+        });
+
+        function getLatLngFromAddress(address, token = MAPBOX_API_KEY) {
+                const baseUrl = 'https://api.mapbox.com';
+                const endPoint = '/geocoding/v5/mapbox.places/';
+                return fetch(baseUrl + endPoint + encodeURIComponent(address) + '.json' + "?" + 'access_token=' + token)
+                    .then(function(res) {
+                        return res.json();
+                        // to get all the data from the request, comment out the following three lines...
+                    }).then(function(data) {
+                        console.log(data);
+                        return data.features[0].center;
+                    });
+            }
+
+        let coords = await getLatLngFromAddress("Belton, TX");
+        console.log(coords);
+
+        const belton = new mapboxgl.Marker();
+        belton.setLngLat(coords);
+        belton.addTo(map);
+
+        // when the zoom in button is clicked, decrease the map's zoom level
+        const zoomIn = document.querySelector("#zoom-in");
+        zoomIn.addEventListener("click", function (event) {
+            let currentZoom = map.getZoom();
+            currentZoom++;
+            map.setZoom(currentZoom);
+        });
+
+        document.querySelector("#drop-marker").addEventListener("click", function (event) {
+            // add a popup to this
+            let popup = new mapboxgl.Popup();
+            popup.setLngLat([-98, 28])
+            popup.setHTML("<h1>Codeup Rocks!</h1><img src='assets/cthulhu.jpeg'>")
+
+            let marker = new mapboxgl.Marker();
+
+            marker.setPopup(popup);
+            marker.setLngLat([-98, 28]);
+            marker.addTo(map);
+
+        });
+
+    })();
+
+</script>
+</body>
+</html>

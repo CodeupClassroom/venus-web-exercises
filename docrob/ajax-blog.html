@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Blog</title>
+
+  <style>
+    .my-blog-post {
+      border: 1px solid green;
+      padding: 0 15px;
+    }
+  </style>
+</head>
+<body>
+  <div id="my-posts">
+
+  </div>
+<script>
+  (async function() {
+    const data = await fetch("data/blog.json")
+            .then(async function(response) {
+              if(response.status !== 200) {
+                console.log("Error fetching data!");
+                return [];
+              }
+              return await response.json();
+            });
+
+    const myPosts = document.querySelector("#my-posts");
+    for (let i = 0; i < data.length; i++) {
+      const post = data[i];
+      myPosts.innerHTML += `
+<div class="my-blog-post">
+      <p>${post.title}</p>
+      <p>${post.content}</p>
+      <p>${post.categories.join(", ")}</p>
+      <p>${post.date}</p>
+</div>`;
+    }
+  })();
+</script>
+</body>
+</html>

@@ -19,17 +19,45 @@
     <tbody id="insertProducts"></tbody>
 </table>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<button id="reload-btn">Reload the screen</button>
 
 <script>
-(function() {
+( function() {
     "use strict";
-    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    document.addEventListener("DOMContentLoaded",async function () {
+        // put stuff here
 
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
+        // 1. read in the tools data using fetch
+        const tools = await fetch("data/inventory.json")
+            .then(function(response) {
+                if(response.status !== 200) {
+                    console.log("Error, cannot fetch data!");
+                    return [];
+                }
+                // else
+                // if we get here, then response.status === 200
+                return response.json();
+            }).then(function(data) {
+                return data;
+            })
+
+        // add a table row per tool
+        // console.log(tools);
+        for (let i = 0; i < tools.length; i++) {
+            const newRow = `
+<tr>
+    <td>${tools[i].title}</td>
+    <td>${tools[i].quantity}</td>
+    <td>${tools[i].price}</td>
+    <td>${tools[i].categories.join(" --- ")}</td>
+</tr>
+            `;
+            // concat the new row html string to the tbody
+            const tbody = document.querySelector("tbody");
+            tbody.innerHTML += newRow;
+        }
+    })
+
 })();
 </script>
 
