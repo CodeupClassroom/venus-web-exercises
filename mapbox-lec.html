@@ -41,14 +41,10 @@
         });
 
         function getLatLngFromAddress(address, token = MAPBOX_API_KEY) {
-                const baseUrl = 'https://api.mapbox.com';
-                const endPoint = '/geocoding/v5/mapbox.places/';
-                return fetch(baseUrl + endPoint + encodeURIComponent(address) + '.json' + "?" + 'access_token=' + token)
-                    .then(function(res) {
-                        return res.json();
-                        // to get all the data from the request, comment out the following three lines...
-                    }).then(function(data) {
-                        console.log(data);
+                const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
+                return fetch(`${url}${encodeURIComponent(address)}.json?access_token=${token}`)
+                    .then(async function(res) {
+                        const data = await res.json();
                         return data.features[0].center;
                     });
             }
