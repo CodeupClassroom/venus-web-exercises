@@ -25,6 +25,10 @@
 
 <button id="drop-marker">Drop Marker</button>
 
+<hr>
+<input id="address-input" type="text" value="Paris, TX">
+<button id="map-search">Search</button>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 <!-- Mapbox JS -->
@@ -46,6 +50,8 @@
             center: saCoords.latLng
         });
 
+
+
         // use geocoding to grab info about 3 restaurants and push into array
         let restaurants = [];
         let info = await getLocationInfoFromAddress("Aldaco's Mexican Cuisine");
@@ -55,12 +61,23 @@
         info = await getLocationInfoFromAddress("El Milagrito Cafe");
         restaurants.push(info);
 
+
+
+
+
+
         document.querySelector("#drop-marker").addEventListener("click", function (event) {
             restaurants.forEach(function(restaurant) {
                 const marker = getMarkerForLocation(restaurant);
                 marker.addTo(map);
             })
         });
+
+
+
+
+
+
 
         function getMarkerForLocation(locationInfo) {
             let popup = new mapboxgl.Popup();
@@ -91,6 +108,7 @@
         <p>Insert restaurant info here</p>
     </div>
     <div class="card-footer">${locationInfo.description}</div>
+</div>
 `
         }
 
@@ -111,6 +129,27 @@
                     return locationInfo;
                 });
         }
+
+
+
+        // add the search btn functionality
+        const searchBtn = document.querySelector("#map-search");
+        searchBtn.addEventListener("click", async function(event) {
+            // 1. get the address from the text input
+            const addressInput = document.querySelector("#address-input");
+            const newAddress = addressInput.value;
+
+            // 2. get the geocode info from the address
+            let info = await getLocationInfoFromAddress(newAddress);
+
+            // 3. center the map on the new coords
+            // map.flyTo(info.latLng)
+            map.setCenter(info.latLng);
+
+            // 4. make a marker for the new location
+            const marker = getMarkerForLocation(info);
+            marker.addTo(map);
+        });
 
     })();
 
