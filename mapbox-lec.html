@@ -36,14 +36,14 @@
     (async function() {
 
         // grab coords for San Antonio
-        const saCoords = await getLatLngFromAddress("San Antonio, TX");
+        const saCoords = await getLocationInfoFromAddress("San Antonio, TX");
         // init map with SA Coords
         mapboxgl.accessToken = MAPBOX_API_KEY;
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v9',
             zoom: 10,
-            center: saCoords
+            center: saCoords.latLng
         });
 
         // use geocoding to grab info about 3 restaurants and push into array
@@ -67,7 +67,17 @@
             const locationHTML = getLocationHTML(locationInfo);
             popup.setHTML(locationHTML);
 
-            let marker = new mapboxgl.Marker();
+            // create a custom icon for the marker
+            // from https://docs.mapbox.com/mapbox-gl-js/example/custom-marker-icons/
+            const el = document.createElement('div');
+            el.className = 'marker';
+            el.style.backgroundRepeat = "no-repeat";
+            el.style.backgroundImage = 'url("../assets/sombrero.png")';
+            el.style.width = '50px';
+            el.style.height = '50px';
+            el.style.backgroundSize = '100%';
+
+            let marker = new mapboxgl.Marker(el);
             marker.setPopup(popup);
             marker.setLngLat(locationInfo.latLng);
             return marker;
@@ -77,17 +87,17 @@
             return `
 <div class="card">
     <h5 class="card-title bg">${locationInfo.address}</h5>
-    <div class="card-body d-flex justify-content-center">
-        Restaurant picture goes here
+    <div class="card-body d-flex justify-content-center bg-info">
+        <p>Insert restaurant info here</p>
     </div>
     <div class="card-footer">${locationInfo.description}</div>
 `
         }
 
+        // location info is {
+        //  "latLng" : [lat lng coords],
+        //  "description": "description of address from map box" }
         function getLocationInfoFromAddress(address, token = MAPBOX_API_KEY) {
-            // location info is {
-            //  "latLng" : [lat lng coords],
-            //  "description": "description of address from map box" }
             const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
             return fetch(`${url}${encodeURIComponent(address)}.json?access_token=${token}`)
                 .then(async function(res) {
@@ -101,15 +111,6 @@
                     return locationInfo;
                 });
         }
-
-        function getLatLngFromAddress(address, token = MAPBOX_API_KEY) {
-                const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/';
-                return fetch(`${url}${encodeURIComponent(address)}.json?access_token=${token}`)
-                    .then(async function(res) {
-                        const data = await res.json();
-                        return data.features[0].center;
-                    });
-            }
 
     })();
 
