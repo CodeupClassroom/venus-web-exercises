@@ -5,3 +5,5 @@ cody_secret
 
 .idea
 *.iml
+
+keys.js

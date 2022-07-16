@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Key Events</title>
+
+    <style>
+        #b1 {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="b1">Click Me</button>
+
+<script>
+    "use strict";
+
+    (function() {
+        document.addEventListener("DOMContentLoaded", function () {
+            // any JS in here will start executing AFTER the DOM loads
+
+            // globals that keep track of the buttons top and left position values
+            let top = 5;
+            let left = 5;
+
+            let keyArray = [];
+
+            // add a keydown listener on the body for when w a s and d are pressed
+            // and a keyup listener for grins
+            const body = document.querySelector("body");
+            body.addEventListener("keydown", moveButton);
+            body.addEventListener("keyup", function(event) {
+                console.log("a key has been released: " + event.key);
+            })
+
+            // when button is clicked, stop the keydown event listener
+            const b1 = document.querySelector("#b1");
+            // for remove listeners, you cannot remove anonymous functions
+            // use only named functions for listeners if you plan on removing them
+            b1.addEventListener("click", function(event) {
+                const body = document.querySelector("body");
+                body.removeEventListener("keydown", moveButton);
+            });
+
+            // this is the named function that will be used for the keydown event
+            function moveButton(keyEvent) {
+                const whichKey = keyEvent.key;
+
+                // keep track of the keys that have been pressed
+                keyArray.push(whichKey);
+                console.log(keyArray);
+
+                // w = move button up 1
+                // s = move button down 1
+                const button = document.querySelector("#b1");
+                if(whichKey === "w") {
+                    top-=5;
+                    button.style.top = top + "px";
+                } else if(whichKey === "s") {
+                    top+=5;
+                    button.style.top = top + "px";
+                } else if(whichKey === "a") {
+                    left-=5;
+                    button.style.left = left + "px";
+                } else if(whichKey === "d") {
+                    left+=5;
+                    button.style.left = left + "px";
+                }
+            }
+        });
+
+    })();
+</script>
+</body>
+</html>

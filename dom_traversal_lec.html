@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Traversal</title>
+</head>
+<body>
+
+<!-- card container -->
+    <div id="cc">
+
+<!--        card 1 -->
+        <div id="c1">
+
+            <button id="b1">Click me</button>
+
+        </div>
+    </div>
+
+<script>
+    "use strict";
+
+    (function() {
+        document.addEventListener("DOMContentLoaded", function () {
+            // any JS in here will start executing AFTER the DOM loads
+
+            // add an event listener to button b1
+            const button1 = document.querySelector("#b1");
+            button1.addEventListener("click", function(event) {
+
+            });
+
+        });
+
+    })();
+
+</script>
+</body>
+</html>

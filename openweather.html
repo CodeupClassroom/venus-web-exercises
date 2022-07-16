@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenWeather Demo</title>
+</head>
+<body>
+
+<script src="js/keys.js"></script>
+<script>
+    "use strict";
+    (function() {
+
+        // test out using fetch with openweather
+        //     fetch(`${OPENWEATHER_ENDPOINT}?lat=${lngLat.lat}&lon=${lngLat.lng}&appid=${OPENWEATHER_API_KEY}&units=imperial&cnt=5`)
+
+        // check the UI for which unit of temp measure they want
+
+        let queryParams = new URLSearchParams({
+            APPID: OPENWEATHER_API_KEY,
+            lat:    29.423017,
+            lon:   -98.48527,
+            units: "imperial"
+        });
+        const url = "https://api.openweathermap.org/data/2.5/onecall?" + queryParams;
+        console.log(url);
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                console.log(data);
+        });
+    })()
+
+</script>
+</body>
+</html>

@@ -15,7 +15,7 @@
     <li data-dbid="5">Item 5</li>
 </ul>
 <h2 id="sub-header">Hello Again.</h2>
-<p class="sub-paragraph">
+<p id="p1" class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -87,7 +87,18 @@
         button3.addEventListener("click", f3);
 
         const button4 = document.getElementById("button4");
-        button4.addEventListener("click", f4);
+        // don't ever do this with a button
+        button4.addEventListener("dblclick", f4);
+
+        // add some mouse enter and exit stuff here
+        // make the paragraph text green on mouse enter and black on mouse leave
+        const p1 = document.querySelector("#p1");
+        p1.addEventListener("mouseenter", function(event) {
+            this.style.color = "blue";
+        });
+        p1.addEventListener("mouseleave", function(event) {
+            this.style.color = "black";
+        });
 
     })();
 </script>

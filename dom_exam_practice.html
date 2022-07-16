@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Exam Practice</title>
+
+    <style>
+        .hotpinkText {
+            color: hotpink;
+        }
+
+        .red-border {
+            border: 5px solid red;
+        }
+
+        .big-font {
+            font-size: 2em;
+        }
+
+        .blue-text {
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1 id="h1-1">Good morning</h1>
+
+<p id="p1-2">This is a paragraph</p>
+<button id="b1-2">Click to change the paragraph</button>
+
+<br>
+
+<a id="a1-3" href="https://www.google.com">Click for Google</a>
+
+<br>
+<button id="b5">Click to change h1 text to hot pink</button>
+
+<p id="p6" class="big-font blue-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda at culpa cupiditate deleniti eveniet, excepturi facere facilis fugit inventore iure laboriosam libero non nostrum nulla quasi quidem quo reiciendis rem similique sint tempora temporibus ut! Debitis eius hic minima reiciendis sed sint soluta. Beatae laboriosam quibusdam repellat velit voluptate!</p>
+
+<hr>
+<label for="text7">Type something here: </label><input id="text7" type="text" value="">
+<p id="p7"></p>
+
+<script>
+    "use strict";
+
+    (function() {
+        document.addEventListener("DOMContentLoaded", function () {
+            // your code goes here
+
+            // problem #1
+            // make the h1 with the id of "h1-1" say "Hello World!"
+            // 1. get a JS variable that targets the h1 using getElementById or querySelector
+            // 2. change its text using
+            const h1_1 = document.querySelector("#h1-1");
+            h1_1.innerHTML = "Hello World";
+
+            // problem #2
+            // when the button with id b1-2 is clicked and change the paragraph with id p1-2 text
+            // to "The quick brown fox jumped over the lazy dog"
+            // 1. create a click listener for the button and use an anonymous function
+            // 2. in the anonymous function, get a variable for the p with id p1-2
+            // 3. set the p's innerText
+            const b1_2 = document.querySelector("#b1-2");
+            b1_2.addEventListener("click", function(event) {
+                const p1_2 = document.querySelector("#p1-2");
+                p1_2.innerHTML = "The quick brown fox jumped over the lazy dog";
+            });
+
+            // problem #3
+            // for the anchor with id a1-3's change href to "https://java.codeup.com"
+            // 1. get a reference to the anchor
+            // 2. use setAttribute on its href
+            const a1_3 = document.querySelector("#a1-3");
+            a1_3.setAttribute("href", "https://java.codeup.com");
+
+            // problem #4
+            // when the body is clicked, change the background color of the body to navajo white
+            // 1. get a reference to the body
+            // 2. set backgroundColor property of its style property to "navajo white"
+            const myBody = document.querySelector("body");
+            myBody.addEventListener("click", function(event) {
+                myBody.style.backgroundColor = "green";
+                // if(this.style.backgroundColor === "green") {
+                //     this.style.backgroundColor = "";
+                // } else {
+                //     this.style.backgroundColor = "green";
+                // }
+
+            });
+
+            // problem #5
+            // when the button with id b5 is clicked, toggle the hotpinkText class for the h1 with id h1-1
+            // 1. get a reference for the button
+            // 2. add an event listener to the button
+            // 3. in the event listener, get a reference for the h1
+            // 4. toggle the class on the h1 object
+            const button5 = document.querySelector("#b5");
+            button5.addEventListener("click", function(event) {
+                const myH1_1 = document.querySelector("#h1-1");
+                myH1_1.classList.toggle("hotpinkText");
+            });
+
+            // problem 6:
+            // reword: when paragraph p6 is hovered over, add a 5px red border to it
+            //      when paragraph p6 hovering stops, remove the border
+            // add 5px red border to the paragraph with id p6 when you hover over it
+            // and remove the border when you stop hovering over it
+            // you can use the red-border class to make this a little easier
+            // 1. make event handlers for mouseenter and mouseleave for paragraph p6
+            // 2. use style property on p6 (or use the this keyword) and set border to "5px solid red"
+            //      you could also add or toggle the class "red-border"
+            const p6 = document.querySelector("#p6");
+            p6.addEventListener("mouseenter", function(event) {
+                p6.classList.add("red-border");
+            });
+            p6.addEventListener("mouseleave", function(event) {
+                p6.classList.remove("red-border");
+            });
+
+            // problem 7: when the user types in the text input with id "text7"
+            // , take the input value from text7 and assign it to p7's text
+            // 1. get a reference to the text field with id input7
+            // 2. add a key event listener to the text field
+            // 3. inside the event listener, get a reference to the paragraph p7
+            // 4. set the paragraph's text to the input's VALUE property
+            const text7 = document.querySelector("#text7");
+            text7.addEventListener("keypress", function(event) {
+                const inputValue = text7.value;
+                // select p7
+                const p7 = document.querySelector("#p7");
+                p7.innerHTML = inputValue;
+            });
+
+
+        });
+
+    })();
+</script>
+</body>
+</html>

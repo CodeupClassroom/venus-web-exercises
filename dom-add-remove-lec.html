@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Adding and Removing Elements</title>
+</head>
+<body>
+<h3>Some Fruit</h3>
+<ul id="fruits">
+    <li>Apple</li>
+    <li>Grapes</li>
+    <li>Pears</li>
+    <li>Pineapple</li>
+</ul>
+
+<hr>
+
+<button id="button">Add Angry Fruit</button>
+
+<button id="delete-button">Delete Last Fruit</button>
+
+<script>
+    // add another fruit to the list
+    const button = document.querySelector("#button");
+    button.addEventListener("click", function(event) {
+        // make the new fruit element (li)
+        // let newFruit = document.createElement("li");
+        // newFruit.innerText = "Angry Fruit";
+        // newFruit.style.color = "red";
+
+        // append it to the ul
+        const fruits = document.querySelector("#fruits");
+        // fruits.appendChild(newFruit);
+
+        // alternate way to add things to an existing element's HTML
+        // console.log(fruits.innerHTML);
+        fruits.innerHTML += `
+<li>
+Angry Fruit
+</li>
+`;
+    });
+
+    const deleteButton = document.querySelector("#delete-button");
+    deleteButton.addEventListener("click", function(event) {
+        // get a ref to the fruits ul
+        const fruits = document.querySelector("#fruits");
+        // if no children then get outta here
+        if(fruits.children.length < 1) {
+            return;
+        }
+
+        // we want to remove the last fruit in the fruits ul
+        const childToRemove = fruits.lastElementChild;
+
+        fruits.removeChild(childToRemove);
+    });
+</script>
+</body>
+</html>

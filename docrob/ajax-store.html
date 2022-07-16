@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<button id="reload-btn">Reload the screen</button>
+
+<script>
+(async function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    const tools = await fetch("data/inventory.json")
+        .then(async function(response) {
+            if(response.status !== 200) {
+                console.log("Error fetching data!");
+                return [];
+            }
+            return await response.json();
+        });
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+    const rows = document.querySelector("#insertProducts");
+    for (let i = 0; i < tools.length; i++) {
+        rows.innerHTML += `
+<tr>
+    <td>${tools[i].title}</td>
+    <td>${tools[i].quantity}</td>
+    <td>${tools[i].price}</td>
+    <td>${tools[i].categories.join(", ")}</td>
+</tr>
+        `;
+    }
+
+    document.querySelector("#reload-btn").addEventListener("click", function(event) {
+        location.reload();
+    });
+})();
+</script>
+
+</body>
+</html>

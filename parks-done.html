@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traversal Exercise</title>
+</head>
+<body>
+
+<h1>Parks List</h1>
+<div id="park1-div">
+    <h3 id="park1-heading">Park 1</h3>
+    <ul id="park1" class="park">
+        <li>Big</li>
+        <li>Pretty</li>
+        <li>Safe</li>
+        <li>Fun</li>
+    </ul>
+</div>
+<div id="park2-div">
+    <h3 id="park2-heading">Park 2</h3>
+    <ul id="park2" class="park">
+        <li>Big</li>
+        <li>Pretty</li>
+        <li>Safe</li>
+        <li>Fun</li>
+    </ul>
+</div>
+<div id="park3-div">
+    <h3 id="park3-heading">Park 3</h3>
+    <ul id="park3" class="park">
+        <li>Big</li>
+        <li>Pretty</li>
+        <li>Safe</li>
+        <li>Fun</li>
+    </ul>
+</div>
+
+<button id="button1">Button 1</button>
+
+<hr>
+
+<img id="picture1" style="width=200px" src="../assets/art1.jpeg">
+<img id="picture2" style="width=200px" src="../assets/art2.png">
+<img id="picture3" style="width=200px" src="../assets/art3.jpeg">
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        document.querySelector("#button1").addEventListener("click", function(event) {
+            const parks = document.querySelectorAll(".park");
+            parks.forEach(function(park) {
+                park.lastElementChild.style.backgroundColor = "yellow";
+            });
+        });
+
+        const h3s = document.querySelectorAll("h3");
+        h3s.forEach(function(h3) {
+            h3.addEventListener("click", function(event) {
+                const lis = this.nextElementSibling.children;
+                for (let i = 0; i < lis.length ; i++) {
+                    lis[i].style.fontWeight = "bold";
+                }
+            });
+        });
+
+        const allLis = document.querySelectorAll("li");
+        allLis.forEach(function(li) {
+            li.addEventListener("click", function(event) {
+                const firstLi = this.parentElement.firstElementChild;
+                firstLi.style.color = "blue";
+            })
+        });
+
+        // bonus
+
+        document.querySelector("#picture1").addEventListener("click", function(event) {
+            const mySrc = this.getAttribute("src");
+            this.setAttribute("src", this.nextElementSibling.getAttribute("src"));
+            this.nextElementSibling.setAttribute("src", mySrc);
+        });
+
+        document.querySelector("#picture2").addEventListener("click", function(event) {
+            const mySrc = this.getAttribute("src");
+            let chosenSibling = this.nextElementSibling;
+            if(Math.random() < .5) {
+                chosenSibling = this.previousElementSibling;
+            }
+            this.setAttribute("src", chosenSibling.getAttribute("src"));
+            chosenSibling.setAttribute("src", mySrc);
+        });
+
+        document.querySelector("#picture3").addEventListener("click", function(event) {
+            const mySrc = this.getAttribute("src");
+            this.setAttribute("src", this.previousElementSibling.getAttribute("src"));
+            this.previousElementSibling.setAttribute("src", mySrc);
+        });
+
+    });
+</script>
+</body>

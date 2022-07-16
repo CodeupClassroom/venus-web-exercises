@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Traversal Lecture</title>
+</head>
+<body>
+
+<h1>Parks List</h1>
+<div id="national-parks-div">
+  <h3 id="national-parks-heading">National Parks</h3>
+  <ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+    <li>Everglades</li>
+  </ul>
+</div>
+<div id="state-parks-div">
+  <h3 id="state-parks-heading">State Parks of Texas</h3>
+  <ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+  </ul>
+</div>
+
+<script>
+
+  const stateParksUL = document.querySelector("#state-parks-texas");
+  // console.log(stateParksUL.parentElement);
+
+  // let's output the parent's children
+  const parent = stateParksUL.parentElement;
+  for (let i = 0; i < parent.children.length; i++) {
+    console.log(parent.children[i]);
+    parent.children[i].style.fontSize = "2em";
+  }
+
+  // can access first child of parent in couple ways
+  parent.children[0].style.fontFamily = "helvetica";
+  parent.firstElementChild.style.color = "red";
+
+  // iterate over stateParksUL's children
+  for (let i = 0; i < stateParksUL.children.length; i++) {
+    console.log(stateParksUL.children[i].innerText);
+  }
+
+  console.log(stateParksUL.firstElementChild.innerText);
+  console.log(stateParksUL.lastElementChild.innerText);
+
+  // 2nd li in state parks tx ul
+  const bigBendLI = stateParksUL.children[1];
+  console.log(bigBendLI.innerText);
+
+  // prev sibling of big bend
+  console.log(bigBendLI.previousElementSibling.innerText);
+
+  // next sibling of big bend
+  console.log(bigBendLI.nextElementSibling.innerText);
+
+  // last li of stateParksUL
+  console.log(stateParksUL.children[stateParksUL.children.length - 1].innerText);
+  console.log(stateParksUL.lastElementChild.innerText);
+
+  console.log(stateParksUL.childNodes);
+
+  // travel up big bend's ancestors until we get sick
+  // console.log(bigBendLI.parentElement); // ul
+  // console.log(bigBendLI.parentElement.parentElement); // state park div
+  // console.log(bigBendLI.parentElement.parentElement.parentElement); // body
+
+
+  // for grins
+  // bigBendLI.parentElement.parentElement.parentElement.removeChild(bigBendLI.parentElement.parentElement);
+  // bigBendLI.parentElement.parentElement.parentElement.appendChild(stateParksUL);
+</script>
+</body>
+</html>

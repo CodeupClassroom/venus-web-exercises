@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script>
+    "use strict";
+
+    // global so we keep track of all keys pressed
+    let keysPressed = [];
+
+    document.addEventListener("keyup", function(event) {
+        keysPressed.push(event.key);
+        console.log("You have pressed: " + keysPressed.toString());
+
+        if(enteredKonamiCode() === true) {
+            console.log("You would get 30 lives!");
+        }
+    });
+
+    function enteredKonamiCode() {
+        const konamiCode = "ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,b,a,Enter";
+        if(keysPressed.toString().includes(konamiCode) === true) {
+            keysPressed.length = 0;
+            return true;
+        }
+        return false;
+    }
+
+    window.setTimeout(function() {
+        console.log("Faking a key press");
+        // document.createEvent();
+        let event = new KeyboardEvent('keyup', {
+            'key': 'w'
+        })
+        document.dispatchEvent(event);
+
+        event = new KeyboardEvent('keyup', {
+            'key': 'a'
+        })
+        document.dispatchEvent(event);
+
+        event = new KeyboardEvent('keyup', {
+            'key': 's'
+        })
+        document.dispatchEvent(event);
+
+        event = new KeyboardEvent('keyup', {
+            'key': 'd'
+        })
+        document.dispatchEvent(event);
+
+    }, 5000);
+
+</script>
+</body>
+</html>
