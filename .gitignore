@@ -7,3 +7,5 @@ cody_secret
 *.iml
 
 keys.js
+
+private_constants.js

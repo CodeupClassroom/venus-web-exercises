@@ -5,10 +5,10 @@ export default function Navbar(props) {
 
     // everyone can see home
     let html = `
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light jalopy-nav">
     <ul class="navbar-nav">   
         <li class="nav-item">         
-            <a class="nav-link"" href="/" data-link>Home</a>
+            <a class="nav-link active"" href="/" data-link>Home</a>
         </li>`;
 
     // everyone can see about

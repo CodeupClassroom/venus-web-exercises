@@ -43,8 +43,8 @@ const quotes = [
 ]
 
 export default function quotesHTMLFunction(props) {
-    // build the top part of the screen
     let html = `
+<!--build the top part of the screen-->
 <h1>Quotes</h1>
 <table class="table table-striped">
 <thead>
@@ -52,8 +52,19 @@ export default function quotesHTMLFunction(props) {
         <th>Quote</th>
         <th>Author</th>
 </tr>
-</thead>`;
+</thead>
 
+${addQuotes()}
+
+<!--build the bottom part of the screen -->
+</table>
+    `;
+
+    return html;
+}
+
+function addQuotes() {
+    let html = "";
     // concat the table rows of quotes, 1 quote per row
     for (let i = 0; i < quotes.length; i++) {
         html += `
@@ -63,12 +74,6 @@ export default function quotesHTMLFunction(props) {
         </tr>
         `;
     }
-
-    // concat the bottom part of the screen
-    html += `
-</table>
-    `;
-
     return html;
 }
 

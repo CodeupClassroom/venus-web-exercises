@@ -1,3 +1,9 @@
+.jalopy-nav {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+
 .home-title {
     text-align: center;
 }
@@ -6,4 +12,13 @@
     display: block;
     margin: 0 auto;
     height: 200px;
+}
+
+h1 {
+    background-color: lightgrey;
+    text-align: center;
+    border-radius: 5px;
+}
+a {
+    /*background-color: navajowhite;*/
 }
