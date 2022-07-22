@@ -8,6 +8,8 @@ import Register from "./views/Register.js"
 import {RegisterEvent} from "./views/Register.js";
 import UserIndex, {UserEvents} from "./views/User.js";
 import Logout, {LogoutEvents} from "./views/Logout.js";
+import DogFactsView, {DogFactsEvents} from "./views/DogFacts.js";
+import quotesHTMLFunction, {quotesJSFunction} from "./views/Quotes.js";
 
 /**
  * Returns the route object for a specific route based on the given URI
@@ -22,6 +24,20 @@ export default function router(URI) {
             uri: '/',
             title: 'Home',
             viewEvent: homeJSFunction
+        },
+        '/quotes': {
+            returnView: quotesHTMLFunction,
+            state: {},
+            uri: '/quotes',
+            title: 'Quotes',
+            viewEvent: quotesJSFunction
+        },
+        '/dogs': {
+            returnView: DogFactsView,
+            state: {},
+            uri: '/dogs',
+            title: 'Facts about Dogs',
+            viewEvent: DogFactsEvents
         },
         '/logout': {
             returnView: Logout,

@@ -5,22 +5,50 @@ export default function Navbar(props) {
 
     // everyone can see home
     let html = `
-        <nav>
-            <a class="jalopy-nav" href="/" data-link>Home</a>`;
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav">   
+        <li class="nav-item">         
+            <a class="nav-link"" href="/" data-link>Home</a>
+        </li>`;
 
     // everyone can see about
-    html = html + `<a class="jalopy-nav" href="/about" data-link>About</a>`;
+    html = html + `
+        <li class="nav-item">
+            <a class="nav-link" href="/about" data-link>About</a>
+        </li>`;
 
     // only logged in can see user info and logout
     if(loggedIn) {
-        html = html + `<a class="jalopy-nav" href="/users" data-link>User Info</a>
-            <a href="/logout" data-link>Logout</a>`;
+        html += `
+        <li class="nav-item">
+            <a class="nav-link" href="/users" data-link>User Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="/logout" data-link>Logout</a>
+        </li>
+`;
     } else {
         // if not logged in, can see login and register
-        html = html + `<a class="jalopy-nav" href="/login" data-link>Login</a>
-        <a class="jalopy-nav" href="/register" data-link>Register</a>`;
+        html += `
+        <li class="nav-item">
+            <a class="nav-link" href="/login" data-link>Login</a>
+        </li>            
+        <li class="nav-item">
+            <a class="nav-link" href="/register" data-link>Register</a>
+        </li>
+`;
     }
 
-    html = html + `</nav>`;
+    html += `
+        <li class="nav-item">
+            <a class="nav-link" href="/dogs" data-link>Dog Facts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/quotes" data-link>Quotes</a>
+        </li>
+`;
+    html += `
+    </ul>
+</nav>`;
     return html;
 }
