@@ -12,8 +12,10 @@ export default function render(props, route) {
     document.title = title;
     //language=html
     app.innerHTML = `${Navbar(null)}
+        <div class="crappy-app">
         ${getNotificationElement()} 
-        ${route.returnView(props)}`;
+        ${route.returnView(props)}
+        </div>`;
     if (route.viewEvent){
         route.viewEvent();
     }

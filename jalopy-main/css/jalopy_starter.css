@@ -9,7 +9,13 @@
 #app {
     padding-bottom: 2.5rem;
 }
-
+#notification-box {
+    position: absolute;
+    margin-top: 200px;
+}
+.crappy-app {
+    /*margin-top: 60px;*/
+}
 footer {
     position: absolute;
     bottom: 0;

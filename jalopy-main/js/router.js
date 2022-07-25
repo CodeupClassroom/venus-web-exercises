@@ -11,6 +11,7 @@ import Logout, {LogoutEvents} from "./views/Logout.js";
 import DogFactsView, {DogFactsEvents} from "./views/DogFacts.js";
 import quotesHTMLFunction, {quotesJSFunction} from "./views/Quotes.js";
 import InsertDogFactView, {InsertDogFactEvents} from "./views/AddDogFact.js";
+import insertQuoteView, {insertQuoteEvents} from "./views/AddQuote.js";
 
 /**
  * Returns the route object for a specific route based on the given URI
@@ -30,7 +31,7 @@ export default function router(URI) {
             returnView: quotesHTMLFunction,
             state: {
                 quotes: {
-                    url: "https://quotes.fulgentcorp.com:12250/v1/quotes?random=false&limit=5",
+                    url: "https://quotes.fulgentcorp.com:12250/v1/quotes?random=false&limit=25",
                     headers: {
                         'Accept': 'application/json',
                         'Authorization': DOG_QUOTE_API_KEY
@@ -47,6 +48,13 @@ export default function router(URI) {
             uri: '/insert-dog-fact',
             title: 'Insert a Dog Fact',
             viewEvent: InsertDogFactEvents
+        },
+        '/insertQuote': {
+            returnView: insertQuoteView,
+            state: {},
+            uri: '/insertQuote',
+            title: 'Insert a new Quote',
+            viewEvent: insertQuoteEvents
         },
         '/dogs': {
             returnView: DogFactsView,

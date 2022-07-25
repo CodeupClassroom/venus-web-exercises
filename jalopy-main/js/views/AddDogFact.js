@@ -37,7 +37,7 @@ function addDogQuote() {
         },
         body: JSON.stringify([fact])
     }
-    fetch("https://dogfacts.fulgentcorp.com:12250/v1/factsAAA", requestOptions)
+    fetch("https://dogfacts.fulgentcorp.com:12250/v1/facts", requestOptions)
         .then(function(response) {
             if(!response.ok) {
                 console.log("add dog fact error: " + response.status);

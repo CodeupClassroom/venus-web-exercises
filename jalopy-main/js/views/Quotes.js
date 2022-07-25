@@ -56,6 +56,7 @@ function buildTopHTML() {
     return `
         <!--build the top part of the screen-->
         <h1>Quotes</h1>
+        <a data-link id="addNewQuote" href="/insertQuote">Insert new quote</a>
         <table class="table table-striped">
         <thead>
             <tr>
