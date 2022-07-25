@@ -1,5 +1,5 @@
 
-const quotes = [
+let quotes = [
     {
         quote: "War is organized murder and torture against our brothers.",
         author: "Alfred Adler"
@@ -43,24 +43,26 @@ const quotes = [
 ]
 
 export default function quotesHTMLFunction(props) {
-    let html = `
-<!--build the top part of the screen-->
-<h1>Quotes</h1>
-<table class="table table-striped">
-<thead>
-    <tr>
-        <th>Quote</th>
-        <th>Author</th>
-</tr>
-</thead>
+    quotes = props.quotes;
 
-${addQuotes()}
-
-<!--build the bottom part of the screen -->
-</table>
-    `;
+    let html = buildTopHTML();
+    html += addQuotes();
+    html += buildBottomHTML();
 
     return html;
+}
+
+function buildTopHTML() {
+    return `
+        <!--build the top part of the screen-->
+        <h1>Quotes</h1>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Quote</th>
+                <th>Author</th>
+        </tr>
+        </thead>`;
 }
 
 function addQuotes() {
@@ -77,6 +79,13 @@ function addQuotes() {
     return html;
 }
 
-export function quotesJSFunction() {
+function buildBottomHTML() {
+    return `
+        </table>
+    `;
 
+}
+
+export function quotesJSFunction() {
+    console.log(quotes);
 }

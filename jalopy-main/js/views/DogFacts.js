@@ -1,38 +1,50 @@
 
-const quotes = [
-    {
-        quote: "a quote",
-        author: "an author"
-    },
-    {
-        quote: "another quote",
-        author: "a different author"
-    }
-]
+
 // HTML function
 export default function DogFactsView(props) {
+    console.log(props);
+
+    let html = buildTopHTML();
+
+    html += buildDogFactsHTML(props.dogFacts);
+
+    html += buildBottomHTML();
+
+    return html;
+}
+
+function buildTopHTML() {
     return `
-    <h1>Dog Facts</h1>
-    <div class="container-fluid">
-    <div class="card">
-        <div class="card-body">
-            <p class="dog-fact" style="visibility: hidden">Humans generally see better than dogs, but dogs see much better when there is low-light.</p>
+        <h1>Dog Facts</h1>
+        <div class="container-fluid">`;
+}
+
+function buildDogFactsHTML(dogFacts) {
+    let html = "";
+    for (let i = 0; i < dogFacts.length; i++) {
+        html += buildDogFactHTML(dogFacts[i]);
+    }
+    return html;
+}
+
+function buildDogFactHTML(dogFact) {
+    return `
+            <div class="card">
+                <div class="card-body">
+                    <p class="dog-fact" style="visibility: hidden">${dogFact}</p>
+                </div>
+            </div>
+        `;
+}
+
+function buildBottomHTML() {
+    return `
+            <button class="form-control" id="show-fact-btn">Show Facts</button>
+            <a data-link href="/insert-dog-fact">Insert Dog Fact</a>
         </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <p class="dog-fact" style="visibility: hidden">All dogs can be traced back 40 million years ago to a weasel-like animal called the Miacis which dwelled in trees and dens. The Miacis later evolved into the Tomarctus, a direct forbear of the genus Canis, which includes the wolf and jackal as well as the dog.</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <p class="dog-fact" style="color: red; visibility: hidden">Small quantities of grapes and raisins can cause renal failure in dogs. Chocolate, macadamia nuts, cooked onions, or anything with caffeine can also be harmful.</p>
-        </div>
-    </div>
-    <button class="form-control" id="show-fact-btn">Show Facts</button>
-</div>
 `;
 }
+
 
 // JS function
 export function DogFactsEvents() {
