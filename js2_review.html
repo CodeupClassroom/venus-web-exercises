@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 2 Review</title>
+</head>
+<body>
+
+<script>
+/*
+JS 2 Exam Topics
+
+1. writing functions
+	a. that have primitives, arrays, and/or objects as parameters
+	b. that return a value
+	c. that creates an object and returns it
+		object fields are given as parameters
+	d. calling functions from within another function
+
+2. working with parameters
+	how does changing a parameter's value work?
+
+3. loops
+	a. for i loop
+	b. iterating over an array and using element data in the loop body
+		e.g., calculating a sum, an average
+
+4. conditionals (if)
+	a. using if in a loop
+		e.g., finding max or min value in an array
+
+5. string functions
+	a. split
+	b. join
+	c. substr
+
+6. arrays
+	a. creating an array
+	b. iterating over an array
+	c. adding elements to an array
+	d. removing elements from an array
+	e. passing an array into a function
+	f. returning an array from a function
+
+7. objects
+	a. creating an object
+	b. accessing an object's fields
+	c. adding fields to an object
+	d. passing an object into a function
+	e. returning an object from a function
+
+8. mod
+	a. determining if a number is odd or even
+ */
+
+// write a function called findMin that accepts an array
+// as a parameter and returns the minimum element in that array
+let a = [11, 22, 3, 4, 5];
+let b = [
+    {
+        name: "bob",
+        age: 42
+    },
+    {
+        name: "lulu",
+        age: 20
+    },
+    {
+        name: "joebob",
+        age: 30
+    }
+]
+let minVal = findMin(a);
+console.log(minVal);
+
+let minAge = findMinAge(b);
+console.log(minAge);
+
+let c = [
+    {
+        name: "docrob",
+        age: 52
+    }
+]
+minAge = findMinAge(c);
+console.log(minAge);
+
+let returnVal = analyzePeople(b);
+console.log(returnVal);
+
+let pizza = makePizza("thin", "cheddar", ["onions", "jalapenos"]);
+
+console.log(pizza);
+
+let d = 10;
+foo(d);
+console.log(d);
+function foo(aNum) {
+    aNum = 20;
+    return true;
+}
+let arr = [1, 2, 3];
+foo2(arr);
+console.log(arr);
+
+function foo2(arr) {
+    arr[0] = 5;
+    arr[1] = 6;
+    arr[2] = 7;
+    return true;
+}
+
+
+let leeroy = {
+    name: "Leeroy Jenkins",
+    age: 75,
+    job: "Paladin"
+}
+printPerson(leeroy);
+
+console.log(lessThan(5, 10));
+console.log(lessThan(15, 10));
+
+// returns true if a < b, else false
+function lessThan(a, b) {
+    if(a < b) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
+
+function printPerson(person) {
+    console.log("Person's name: " + person.name);
+    console.log("Age: " + person.age);
+    console.log("Job: " + person.job);
+}
+
+
+function makePizza(crust, cheese, toppings) {
+    // let newPizza = {};
+    // newPizza.crust = crust;
+    // newPizza.cheese = cheese;
+    // newPizza.toppings = toppings;
+    let newPizza = {
+        crust,
+        cheese,
+        toppings
+    }
+    return newPizza;
+}
+
+
+function analyzePeople(ppl) {
+    // calculate the min age of the ppl
+    let minAge = findMinAge(ppl);
+    // console.log("Min age of ppl is " + minAge);
+
+    return "analyzed ppl and min age is " + minAge;
+}
+
+function findMinAge(people) {
+    let minAge = 9999999;
+    for (let i = 0; i < people.length; i++) {
+        // if that person's age is < minAge, then replace minAge
+        // with that person's age
+        if(people[i].age < minAge) {
+            minAge = people[i].age;
+        }
+    }
+    return minAge;
+}
+
+minAge = findMinAge(c);
+console.log(minAge);
+
+
+function findMin(arr) {
+    // write a function called findMin that accepts an array
+    // as a parameter and returns the minimum element in that array
+    // all the code we need for finding the min in the array parameter
+    let theMin = 9999999;
+
+    for (let i = 0; i < arr.length; i++) {
+        // arr.forEach(function(aNum) {
+        if(arr[i] < theMin) {
+            theMin = arr[i];
+        }
+    }
+    return theMin;
+}
+
+</script>
+</body>
+</html>
