@@ -31,8 +31,7 @@ JS 2 Exam Topics
 
 5. string functions
 	a. split
-	b. join
-	c. substr
+	b. substr
 
 6. arrays
 	a. creating an array
@@ -41,6 +40,7 @@ JS 2 Exam Topics
 	d. removing elements from an array
 	e. passing an array into a function
 	f. returning an array from a function
+	g. join
 
 7. objects
 	a. creating an object
@@ -53,145 +53,208 @@ JS 2 Exam Topics
 	a. determining if a number is odd or even
  */
 
-// write a function called findMin that accepts an array
-// as a parameter and returns the minimum element in that array
-let a = [11, 22, 3, 4, 5];
-let b = [
-    {
-        name: "bob",
-        age: 42
-    },
-    {
-        name: "lulu",
-        age: 20
-    },
-    {
-        name: "joebob",
-        age: 30
+let aString = "hello world";
+// get the first 5 characters in aString
+let firstFiveChars = aString.substring(0, 5);
+// in example last 5 chars are "world"
+// indexes range from 6 to 10
+let lastFiveChars = aString.subString(aString.length - 5, aString.length);
+// how can we get last 5 characters from aString?
+
+// write a function called convertArrayToCommaString that takes an array parameter and returns all of the array elements in a comma delimited string
+function convertArrayToCommaString(anArray) {
+    // 1. create an empty string that we will return
+    let aString = "";
+    // 2. loop over the array
+    for (let i = 0; i < anArray.length; i++) {
+        // 3. concat each array element on the string (add a comma to separate)
+        aString += anArray[i] + ", ";
     }
-]
-let minVal = findMin(a);
-console.log(minVal);
+    // 4. return the string
+    // return aString;
 
-let minAge = findMinAge(b);
-console.log(minAge);
+    // or we can just use array.join
+    return anArray.join(", ");
+}
 
-let c = [
-    {
-        name: "docrob",
-        age: 52
+// write a function called makeStudent that takes firstName and lastName parameters and creates and returns a student object with firstName and lastName properties set to the parameter values
+function makeStudent(firstName, lastName) {
+    let student = {
+        firstName: firstName,
+        lastName: lastName
     }
-]
-minAge = findMinAge(c);
-console.log(minAge);
-
-let returnVal = analyzePeople(b);
-console.log(returnVal);
-
-let pizza = makePizza("thin", "cheddar", ["onions", "jalapenos"]);
-
-console.log(pizza);
-
-let d = 10;
-foo(d);
-console.log(d);
-function foo(aNum) {
-    aNum = 20;
-    return true;
-}
-let arr = [1, 2, 3];
-foo2(arr);
-console.log(arr);
-
-function foo2(arr) {
-    arr[0] = 5;
-    arr[1] = 6;
-    arr[2] = 7;
-    return true;
+    return student;
 }
 
-
-let leeroy = {
-    name: "Leeroy Jenkins",
-    age: 75,
-    job: "Paladin"
-}
-printPerson(leeroy);
-
-console.log(lessThan(5, 10));
-console.log(lessThan(15, 10));
-
-// returns true if a < b, else false
-function lessThan(a, b) {
-    if(a < b) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-
-
-
-function printPerson(person) {
-    console.log("Person's name: " + person.name);
-    console.log("Age: " + person.age);
-    console.log("Job: " + person.job);
-}
-
-
-function makePizza(crust, cheese, toppings) {
-    // let newPizza = {};
-    // newPizza.crust = crust;
-    // newPizza.cheese = cheese;
-    // newPizza.toppings = toppings;
-    let newPizza = {
-        crust,
-        cheese,
-        toppings
-    }
-    return newPizza;
-}
-
-
-function analyzePeople(ppl) {
-    // calculate the min age of the ppl
-    let minAge = findMinAge(ppl);
-    // console.log("Min age of ppl is " + minAge);
-
-    return "analyzed ppl and min age is " + minAge;
-}
-
-function findMinAge(people) {
-    let minAge = 9999999;
-    for (let i = 0; i < people.length; i++) {
-        // if that person's age is < minAge, then replace minAge
-        // with that person's age
-        if(people[i].age < minAge) {
-            minAge = people[i].age;
+// write a function called printOddElements that takes an array (as a parameter) and prints out all odd elements in the array
+// use console.log for printing
+// clarification: if the index for an element is odd, then print that element out
+function printOddElements(anArray) {
+    // 1. loop over all elements in the array
+    for (let i = 0; i < anArray.length; i++) {
+        // 2. if the index i is odd then print out the element
+        if(i % 2 === 1) {
+            console.log(anArray[i]);
         }
     }
-    return minAge;
 }
 
-minAge = findMinAge(c);
-console.log(minAge);
 
 
-function findMin(arr) {
-    // write a function called findMin that accepts an array
-    // as a parameter and returns the minimum element in that array
-    // all the code we need for finding the min in the array parameter
-    let theMin = 9999999;
+// write a function called printArray that takes an array as a parameter
+// and prints all of the array elements to the console
+function printArray(anArray) {
+    // loop over the array
+    // and print each of its elements to the console
+}
 
-    for (let i = 0; i < arr.length; i++) {
-        // arr.forEach(function(aNum) {
-        if(arr[i] < theMin) {
-            theMin = arr[i];
-        }
+function makeStudent(firstName, lastName) {
+    let newStudent = {
+        firstName : firstName,
+        lastName : lastName,
     }
-    return theMin;
+    return newStudent
 }
+
+// // write a function called findMin that accepts an array
+// // as a parameter and returns the minimum element in that array
+// let a = [11, 22, 3, 4, 5];
+// let b = [
+//     {
+//         name: "bob",
+//         age: 42
+//     },
+//     {
+//         name: "lulu",
+//         age: 20
+//     },
+//     {
+//         name: "joebob",
+//         age: 30
+//     }
+// ]
+// let minVal = findMin(a);
+// console.log(minVal);
+//
+// let minAge = findMinAge(b);
+// console.log(minAge);
+//
+// let c = [
+//     {
+//         name: "docrob",
+//         age: 52
+//     }
+// ]
+// minAge = findMinAge(c);
+// console.log(minAge);
+//
+// let returnVal = analyzePeople(b);
+// console.log(returnVal);
+//
+// let pizza = makePizza("thin", "cheddar", ["onions", "jalapenos"]);
+//
+// console.log(pizza);
+//
+// let d = 10;
+// foo(d);
+// console.log(d);
+// function foo(aNum) {
+//     aNum = 20;
+//     return true;
+// }
+// let arr = [1, 2, 3];
+// foo2(arr);
+// console.log(arr);
+//
+// function foo2(arr) {
+//     arr[0] = 5;
+//     arr[1] = 6;
+//     arr[2] = 7;
+//     return true;
+// }
+//
+//
+// let leeroy = {
+//     name: "Leeroy Jenkins",
+//     age: 75,
+//     job: "Paladin"
+// }
+// printPerson(leeroy);
+//
+// console.log(lessThan(5, 10));
+// console.log(lessThan(15, 10));
+//
+// // returns true if a < b, else false
+// function lessThan(a, b) {
+//     if(a < b) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+//
+//
+//
+//
+// function printPerson(person) {
+//     console.log("Person's name: " + person.name);
+//     console.log("Age: " + person.age);
+//     console.log("Job: " + person.job);
+// }
+//
+//
+// function makePizza(crust, cheese, toppings) {
+//     // let newPizza = {};
+//     // newPizza.crust = crust;
+//     // newPizza.cheese = cheese;
+//     // newPizza.toppings = toppings;
+//     let newPizza = {
+//         crust,
+//         cheese,
+//         toppings
+//     }
+//     return newPizza;
+// }
+//
+//
+// function analyzePeople(ppl) {
+//     // calculate the min age of the ppl
+//     let minAge = findMinAge(ppl);
+//     // console.log("Min age of ppl is " + minAge);
+//
+//     return "analyzed ppl and min age is " + minAge;
+// }
+//
+// function findMinAge(people) {
+//     let minAge = 9999999;
+//     for (let i = 0; i < people.length; i++) {
+//         // if that person's age is < minAge, then replace minAge
+//         // with that person's age
+//         if(people[i].age < minAge) {
+//             minAge = people[i].age;
+//         }
+//     }
+//     return minAge;
+// }
+//
+// minAge = findMinAge(c);
+// console.log(minAge);
+//
+//
+// function findMin(arr) {
+//     // write a function called findMin that accepts an array
+//     // as a parameter and returns the minimum element in that array
+//     // all the code we need for finding the min in the array parameter
+//     let theMin = 9999999;
+//
+//     for (let i = 0; i < arr.length; i++) {
+//         // arr.forEach(function(aNum) {
+//         if(arr[i] < theMin) {
+//             theMin = arr[i];
+//         }
+//     }
+//     return theMin;
+// }
 
 </script>
 </body>
